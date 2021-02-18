@@ -397,7 +397,7 @@
                             <constraint firstItem="u8c-6f-eM3" firstAttribute="top" secondItem="GQb-Ew-84Z" secondAttribute="bottom" constant="16" id="NyI-e9-dIF"/>
                             <constraint firstItem="7L1-AN-KcR" firstAttribute="centerX" secondItem="GQb-Ew-84Z" secondAttribute="centerX" id="P6R-bg-Dui"/>
                             <constraint firstItem="OZV-yE-Elq" firstAttribute="top" secondItem="VPg-Pd-s96" secondAttribute="bottom" constant="29" id="POt-8f-t2G"/>
-                            <constraint firstItem="CxC-fb-9Hn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="djx-3L-uya" secondAttribute="trailing" symbolic="YES" id="QDX-Tp-74t"/>
+                            <constraint firstItem="CxC-fb-9Hn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="djx-3L-uya" secondAttribute="trailing" constant="8" symbolic="YES" id="QDX-Tp-74t"/>
                             <constraint firstItem="OZV-yE-Elq" firstAttribute="leading" secondItem="eXi-en-DqA" secondAttribute="leading" id="SCE-zC-XmY"/>
                             <constraint firstItem="hpF-jA-Lk1" firstAttribute="top" secondItem="u8c-6f-eM3" secondAttribute="bottom" constant="8" symbolic="YES" id="TFj-8H-D5L"/>
                             <constraint firstItem="kii-I5-ddC" firstAttribute="top" secondItem="eXi-en-DqA" secondAttribute="bottom" constant="29" id="VU9-2y-fv0"/>
