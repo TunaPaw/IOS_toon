@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TimesNewRoman.ttf">
+            <string>.SFUI-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -120,18 +125,47 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="217"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hj-iP-jXC">
+                                <rect key="frame" x="0.0" y="353" width="390" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wNf-GT-bcY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1nt-6k-aHZ"/>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAG-Eo-s08">
+                                <rect key="frame" x="0.0" y="584" width="390" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="01n-3S-ZaH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="4wm-Bb-b8Y"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2월신작" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngm-zf-Vdx">
+                                <rect key="frame" x="162" y="308" width="66" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".SFUI-Semibold" family=".AppleSystemUIFont" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="인기만화" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-0k-YpI">
+                                <rect key="frame" x="162" y="539" width="66" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lKI-gr-pIZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="2F3-MX-25B"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="2F3-MX-25B"/>
                     <navigationItem key="navigationItem" title="Title" id="beY-6W-wYD">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="Ezg-fo-MNW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="AdImageView" destination="2rv-5t-fZV" id="xHj-o9-1Bd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXX-64-egp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509.23076923076923" y="1272.5118483412323"/>
+            <point key="canvasLocation" x="880" y="1276.7772511848341"/>
         </scene>
         <!--most-->
         <scene sceneID="OAn-wU-jCm">
@@ -172,7 +206,7 @@
                             <outlet property="delegate" destination="Dr8-Q3-pe0" id="FsI-7d-EAE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="K6c-Rs-zYP"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="K6c-Rs-zYP"/>
                     <navigationItem key="navigationItem" title="most" id="yuJ-29-Q6f">
                         <leftBarButtonItems>
                             <barButtonItem title="Item" id="nyD-zw-Hlm"/>
@@ -182,7 +216,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6S-Ey-pEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="483" y="1273"/>
+            <point key="canvasLocation" x="1871" y="1277"/>
         </scene>
         <!--아이디 비밀번호 찾기-->
         <scene sceneID="1xY-cn-sfR">
@@ -260,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYs-Zr-7b7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="-1114"/>
+            <point key="canvasLocation" x="-35" y="986"/>
         </scene>
         <!--회원가입-->
         <scene sceneID="gIo-sb-Zl5">
@@ -428,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoZ-Fi-Qku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="-1044"/>
+            <point key="canvasLocation" x="-725" y="986"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="was-nh-Hxx">
@@ -454,10 +488,18 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MJN-tL-k5Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bb0-3l-Fxn">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="person" catalog="system" id="hKe-nb-Tpe"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="person" catalog="system" id="hKe-nb-Tpe">
+                            <connections>
+                                <segue destination="8gb-Gw-uwN" kind="show" id="nqa-tE-lXv"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem id="PdI-Ca-8iC"/>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="pPP-qG-q6z"/>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="pPP-qG-q6z">
+                                <connections>
+                                    <segue destination="Nkx-sE-0OY" kind="show" id="ZJ1-sj-X1U"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1lq-1b-JYr">
@@ -474,7 +516,70 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AX-nR-ycI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="198"/>
+            <point key="canvasLocation" x="2483" y="203"/>
+        </scene>
+        <!--My Page View Controller-->
+        <scene sceneID="VuZ-gf-0O4">
+            <objects>
+                <viewController id="8gb-Gw-uwN" customClass="MyPageViewController" customModule="IOS_toon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbQ-HS-CVf">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-3B-N2j">
+                                <rect key="frame" x="130" y="750" width="130" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <state key="normal" title="회원탈퇴">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-df-jr9">
+                                <rect key="frame" x="130" y="690" width="130" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <state key="normal" title="로그아웃">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eDy-lg-Wkf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AjR-9G-Ad0"/>
+                    <connections>
+                        <outlet property="btnWithdrawal" destination="rSI-3B-N2j" id="Da3-Cm-6No"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gcw-xJ-Ntf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5200" y="104.50236966824644"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="YBJ-Gm-1jk">
+            <objects>
+                <viewController id="Nkx-sE-0OY" customClass="SearchViewController" customModule="IOS_toon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FTv-b6-bmR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMB-kf-lhG">
+                                <rect key="frame" x="53" y="367" width="284" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bBJ-sY-qrf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dEy-mE-B0T"/>
+                    <connections>
+                        <outlet property="SearchBar" destination="rMB-kf-lhG" id="j1C-Hs-BKt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yed-eU-R1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5201.538461538461" y="772.74881516587675"/>
         </scene>
         <!--BooK-->
         <scene sceneID="9VK-x3-aqX">
@@ -502,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iU9-5e-Ryv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="1273"/>
+            <point key="canvasLocation" x="2951" y="1277"/>
         </scene>
         <!--Title-->
         <scene sceneID="9Zp-QO-VGZ">
@@ -514,14 +619,14 @@
                         <viewLayoutGuide key="safeArea" id="N8i-46-XUR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="lFo-eQ-25v"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="lFo-eQ-25v"/>
                     <navigationItem key="navigationItem" title="Title" id="zMR-kf-ZOP">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="730-Nu-TjI"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDe-hW-Tya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783" y="1273"/>
+            <point key="canvasLocation" x="4091" y="1277"/>
         </scene>
     </scenes>
     <resources>

@@ -10,10 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var txtUserId: UITextField!
     @IBOutlet weak var txtUserPassword: UITextField!
-    
+   
+    let imageView = UIImageView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//  self.view.backgroundColor = UIColor(patternImage: UIImage(named: "back2.jpg")!)
     }
 
     @IBAction func btnOk(_ sender: UIButton) {
