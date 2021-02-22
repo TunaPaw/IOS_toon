@@ -304,22 +304,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-0h-Nky">
-                                <rect key="frame" x="54" y="184" width="242" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="EmJ-3a-OPD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-dX-TVW">
-                                <rect key="frame" x="54" y="234" width="242" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="cXT-sA-Mwp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="60J-yg-z0a">
                                 <rect key="frame" x="54" y="394" width="242" height="34"/>
                                 <constraints>
@@ -385,43 +369,74 @@
                                     <action selector="btnJoin:" destination="4pZ-uv-EQv" eventType="touchUpInside" id="FWm-Ht-3uQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상세주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-at-6wl">
-                                <rect key="frame" x="54" y="338" width="242" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-0h-Nky">
+                                <rect key="frame" x="54" y="134" width="242" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="EmJ-3a-OPD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-dX-TVW">
+                                <rect key="frame" x="54" y="184" width="242" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="cXT-sA-Mwp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms3-gQ-NpZ">
+                                <rect key="frame" x="304" y="186" width="52" height="30"/>
+                                <state key="normal" title="중복확인"/>
+                                <connections>
+                                    <action selector="btnJoinEmailCheck:" destination="4pZ-uv-EQv" eventType="touchUpInside" id="zQg-YE-Kr0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-at-6wl">
+                                <rect key="frame" x="54" y="288" width="242" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="zAm-OI-LII"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="우편번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bh-AT-eub">
-                                <rect key="frame" x="54" y="288" width="122" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상세주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrN-D4-XR3">
+                                <rect key="frame" x="54" y="344" width="242" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="CeN-FH-dIg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="우편번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bh-AT-eub">
+                                <rect key="frame" x="54" y="238" width="122" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="J5K-jp-SiC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms3-gQ-NpZ">
-                                <rect key="frame" x="304" y="236" width="52" height="30"/>
-                                <state key="normal" title="중복확인"/>
-                                <connections>
-                                    <action selector="btnJoinEmailCheck:" destination="4pZ-uv-EQv" eventType="touchUpInside" id="zQg-YE-Kr0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rhp-iK-WSl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jKM-dX-TVW" firstAttribute="top" secondItem="ILH-0h-Nky" secondAttribute="bottom" constant="16" id="0ab-ee-oEt"/>
                             <constraint firstItem="ILH-0h-Nky" firstAttribute="leading" secondItem="Rhp-iK-WSl" secondAttribute="leading" constant="54" id="3Nr-Ob-odK"/>
+                            <constraint firstItem="gDv-at-6wl" firstAttribute="top" secondItem="2Bh-AT-eub" secondAttribute="bottom" constant="16" id="3Zq-GR-Z5o"/>
                             <constraint firstItem="jKM-dX-TVW" firstAttribute="leading" secondItem="2Bh-AT-eub" secondAttribute="leading" id="41q-GF-j5a"/>
                             <constraint firstItem="7L1-AN-KcR" firstAttribute="top" secondItem="hpF-jA-Lk1" secondAttribute="bottom" constant="32" id="4TB-zL-xw8"/>
+                            <constraint firstItem="60J-yg-z0a" firstAttribute="top" secondItem="rrN-D4-XR3" secondAttribute="bottom" constant="28" id="5EV-cs-LR5"/>
                             <constraint firstItem="gDv-at-6wl" firstAttribute="leading" secondItem="60J-yg-z0a" secondAttribute="leading" id="6eU-M1-7i3"/>
+                            <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="rrN-D4-XR3" secondAttribute="trailing" constant="94" id="7ns-4B-aP2"/>
+                            <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="rrN-D4-XR3" secondAttribute="trailing" constant="94" id="7zi-iu-AGY"/>
                             <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="2Bh-AT-eub" secondAttribute="trailing" constant="214" id="82p-ca-iOg"/>
                             <constraint firstItem="60J-yg-z0a" firstAttribute="top" secondItem="gDv-at-6wl" secondAttribute="bottom" constant="22" id="848-M9-lmj"/>
                             <constraint firstItem="7L1-AN-KcR" firstAttribute="trailing" secondItem="u8c-6f-eM3" secondAttribute="trailing" id="84k-67-Hgq"/>
                             <constraint firstItem="jKM-dX-TVW" firstAttribute="trailing" secondItem="gDv-at-6wl" secondAttribute="trailing" id="9qY-PX-NPA"/>
+                            <constraint firstItem="gDv-at-6wl" firstAttribute="leading" secondItem="Rhp-iK-WSl" secondAttribute="leading" constant="54" id="DOX-HY-Qud"/>
                             <constraint firstItem="60J-yg-z0a" firstAttribute="leading" secondItem="CxC-fb-9Hn" secondAttribute="leading" id="Ezv-wH-Gel"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="leading" secondItem="Rhp-iK-WSl" secondAttribute="leading" constant="54" id="FUZ-Sd-2Xw"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="leading" secondItem="Rhp-iK-WSl" secondAttribute="leading" constant="54" id="Gh5-Ip-4qm"/>
                             <constraint firstItem="ILH-0h-Nky" firstAttribute="trailing" secondItem="jKM-dX-TVW" secondAttribute="trailing" id="H0Q-X9-e0L"/>
                             <constraint firstItem="gDv-at-6wl" firstAttribute="trailing" secondItem="60J-yg-z0a" secondAttribute="trailing" id="IDv-no-LRN"/>
                             <constraint firstItem="Rhp-iK-WSl" firstAttribute="bottom" secondItem="7L1-AN-KcR" secondAttribute="bottom" constant="44" id="ITs-Hj-Zdr"/>
@@ -435,12 +450,16 @@
                             <constraint firstItem="CxC-fb-9Hn" firstAttribute="top" secondItem="60J-yg-z0a" secondAttribute="bottom" constant="10" id="Yu8-AQ-kKk"/>
                             <constraint firstItem="7L1-AN-KcR" firstAttribute="centerX" secondItem="YNi-uV-kZ6" secondAttribute="centerX" id="a6j-Fh-dSC"/>
                             <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="ms3-gQ-NpZ" secondAttribute="trailing" constant="34" id="aH4-Bf-mSG"/>
+                            <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="gDv-at-6wl" secondAttribute="trailing" constant="94" id="aKG-tM-aAZ"/>
                             <constraint firstItem="7L1-AN-KcR" firstAttribute="centerX" secondItem="hpF-jA-Lk1" secondAttribute="centerX" id="e23-1v-d2e"/>
                             <constraint firstItem="60J-yg-z0a" firstAttribute="trailing" secondItem="CxC-fb-9Hn" secondAttribute="trailing" id="gCm-tZ-lDm"/>
                             <constraint firstItem="ILH-0h-Nky" firstAttribute="leading" secondItem="jKM-dX-TVW" secondAttribute="leading" id="grV-0u-4G5"/>
                             <constraint firstItem="gDv-at-6wl" firstAttribute="top" secondItem="2Bh-AT-eub" secondAttribute="bottom" constant="16" id="gzZ-bn-d2r"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="top" secondItem="gDv-at-6wl" secondAttribute="bottom" constant="22" id="iT6-3g-aRE"/>
                             <constraint firstItem="GQb-Ew-84Z" firstAttribute="top" secondItem="CxC-fb-9Hn" secondAttribute="bottom" constant="8" symbolic="YES" id="lIV-Lh-U1E"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="top" secondItem="gDv-at-6wl" secondAttribute="bottom" constant="19" id="obf-jP-KIo"/>
                             <constraint firstItem="GQb-Ew-84Z" firstAttribute="leading" secondItem="Rhp-iK-WSl" secondAttribute="leading" constant="48" id="ovc-xI-MAh"/>
+                            <constraint firstItem="60J-yg-z0a" firstAttribute="top" secondItem="rrN-D4-XR3" secondAttribute="bottom" constant="25" id="sho-gI-830"/>
                             <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="ILH-0h-Nky" secondAttribute="trailing" constant="94" id="xkW-Sr-xsi"/>
                         </constraints>
                     </view>

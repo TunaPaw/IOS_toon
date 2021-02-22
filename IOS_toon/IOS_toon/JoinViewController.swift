@@ -21,8 +21,11 @@ class JoinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        txtJoinPassword.textContentType = .newPassword
+        txtJoinPassword.isSecureTextEntry = true
+        txtJoinPasswordCheck.textContentType = .newPassword
+        txtJoinPasswordCheck.isSecureTextEntry = true
+      
     }
     
     @IBAction func btnJoinEmailCheck(_ sender: UIButton) {
@@ -40,44 +43,32 @@ class JoinViewController: UIViewController {
     
     
     @IBAction func btnJoin(_ sender: UIButton) {
-    }
-    
-    
-    // 빈칸 체크 함수
-    func signUpAlert(_ field: UITextField) {
-        DispatchQueue.main.async {
-            var title = ""
-            switch field {
-            case self.txtJoinPassword:
-                title = "비밀번호를 입력해주세요."
-            case self.txtJoinPasswordCheck:
-                title = "비밀번호를 확인해주세요."
-            case self.txtJoinName:
-                title = "이름을 입력해주세요."
-            case self.txtJoinEmail:
-                title = "이메일을 입력해주세요."
-            case self.txtJoinAddr:
-                title = "주소 입력해주세요."
-            case self.txtJoinPostcode:
-                title = "우편번호를 입력해주세요."
-            default:
-                title = "Error"
-            }
-            let controller = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "닫기", style: .cancel) { (action) in
-                
-            }
-            
-            controller.addAction(cancelAction)
-            self.present(controller, animated: true, completion: nil)
+        let userEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let userName = txtJoinName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let userPw = txtJoinPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let userPwCheck = txtJoinPasswordCheck.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let userPostcode = txtJoinPostcode.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let userAddr = txtJoinAddr.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        
+        func displayAlertMessage(userMessage: String){
+            let myAlert = UIAlertController(title: "알림", message: userMessage, preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            myAlert.addAction(okAction)
+            self.present(myAlert, animated:true, completion:nil);
         }
+       
+        
+        
+    if(userEmail=="" || userPw=="" || userPwCheck=="" || userPostcode == "" || userAddr == "" || userName == ""){
+        displayAlertMessage(userMessage: "빈칸이 없게 입력해주세요");
+        return;
     }
-
-    func validpassword(mypassword : String) -> Bool {//숫자+문자 포함해서 8~20글자 사이의 text 체크하는 정규표현식
-        let passwordreg = ("(?=.*[A-Za-z])(?=.*[0-9]).{8,20}")
-        let passwordtesting = NSPredicate(format: "SELF MATCHES %@", passwordreg)
-        return passwordtesting.evaluate(with: mypassword)
+    if(userPw != userPwCheck){
+        displayAlertMessage(userMessage: "비밀번호가 일치하지 않습니다.");
+        return;
     }
-
-
+        
+    }
+    
 }
