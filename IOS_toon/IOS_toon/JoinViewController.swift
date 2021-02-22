@@ -15,6 +15,7 @@ class JoinViewController: UIViewController {
     @IBOutlet weak var txtJoinAddr: UITextField!
     @IBOutlet weak var txtJoinPassword: UITextField!
     @IBOutlet weak var txtJoinPasswordCheck: UITextField!
+    @IBOutlet weak var txtJoinTel: UITextField!
     
     
     
@@ -49,7 +50,7 @@ class JoinViewController: UIViewController {
         let UPasswordCheck = txtJoinPasswordCheck.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let UPostcode = txtJoinPostcode.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let UAddr = txtJoinAddr.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        let UTel = txtJoinTel.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         func displayAlertMessage(userMessage: String){
             let myAlert = UIAlertController(title: "알림", message: userMessage, preferredStyle: UIAlertController.Style.alert)
@@ -60,12 +61,12 @@ class JoinViewController: UIViewController {
        
         
         
-    if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == ""){
+    if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == "" || UTel == ""){
         displayAlertMessage(userMessage: "빈칸이 없게 입력해주세요");
         return;
     }else{
         let insertModel = InsertModel()
-        let result = insertModel.insertItems(Email: UEmail, Name: UName, Tel: UName, Postcode: UPostcode, Addr: UAddr, Password: UPassword, PasswordCheck: UPasswordCheck)
+        let result = insertModel.insertItems(Email: UEmail, Name: UName, Tel: UTel, Postcode: UPostcode, Addr: UAddr, Password: UPassword, PasswordCheck: UPasswordCheck)
         if result == true{
             let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
