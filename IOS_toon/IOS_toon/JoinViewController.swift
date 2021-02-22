@@ -21,10 +21,10 @@ class JoinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtJoinPassword.textContentType = .newPassword
-        txtJoinPassword.isSecureTextEntry = true
-        txtJoinPasswordCheck.textContentType = .newPassword
-        txtJoinPasswordCheck.isSecureTextEntry = true
+//        txtJoinPassword.textContentType = .newPassword
+//        txtJoinPassword.isSecureTextEntry = true
+//        txtJoinPasswordCheck.textContentType = .newPassword
+//        txtJoinPasswordCheck.isSecureTextEntry = true
       
     }
     
@@ -43,12 +43,12 @@ class JoinViewController: UIViewController {
     
     
     @IBAction func btnJoin(_ sender: UIButton) {
-        let userEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let userName = txtJoinName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let userPw = txtJoinPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let userPwCheck = txtJoinPasswordCheck.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let userPostcode = txtJoinPostcode.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let userAddr = txtJoinAddr.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UName = txtJoinName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UPassword = txtJoinPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UPasswordCheck = txtJoinPasswordCheck.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UPostcode = txtJoinPostcode.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UAddr = txtJoinAddr.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         
         func displayAlertMessage(userMessage: String){
@@ -60,15 +60,37 @@ class JoinViewController: UIViewController {
        
         
         
-    if(userEmail=="" || userPw=="" || userPwCheck=="" || userPostcode == "" || userAddr == "" || userName == ""){
+    if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == ""){
         displayAlertMessage(userMessage: "빈칸이 없게 입력해주세요");
         return;
+    }else{
+        let insertModel = InsertModel()
+        let result = insertModel.insertItems(Email: UEmail, Name: UName, Tel: UName, Postcode: UPostcode, Addr: UAddr, Password: UPassword, PasswordCheck: UPasswordCheck)
+        if result == true{
+            let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: UIAlertController.Style.alert)
+            let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
+                self.navigationController?.popViewController(animated: true)
+            })
+            resultAlert.addAction(onAction)
+            present(resultAlert, animated: true, completion: nil)
+            
+        }else{ // 에러일 경우
+            let resultAlert = UIAlertController(title: "실패", message: "에러가 발생 되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            resultAlert.addAction(onAction)
+            present(resultAlert, animated: true, completion: nil)
+            
+        }
+        
     }
-    if(userPw != userPwCheck){
+    if(UPassword != UPasswordCheck){
         displayAlertMessage(userMessage: "비밀번호가 일치하지 않습니다.");
         return;
     }
         
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
