@@ -299,37 +299,33 @@
         <!--회원가입-->
         <scene sceneID="gIo-sb-Zl5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoZ-Fi-Qku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="4pZ-uv-EQv" customClass="JoinViewController" customModule="IOS_toon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YNi-uV-kZ6">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="60J-yg-z0a">
-                                <rect key="frame" x="54" y="374" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="60J-yg-z0a">
+                                <rect key="frame" x="48" y="212" width="242" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxC-fb-9Hn">
-                                <rect key="frame" x="54" y="416" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxC-fb-9Hn">
+                                <rect key="frame" x="48" y="254" width="242" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8c-6f-eM3">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8c-6f-eM3">
                                 <rect key="frame" x="172" y="650" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="약관에 동의 합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-jA-Lk1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="약관에 동의 합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-jA-Lk1">
                                 <rect key="frame" x="148" y="689" width="94" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GQb-Ew-84Z">
-                                <rect key="frame" x="48" y="502" width="294" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GQb-Ew-84Z">
+                                <rect key="frame" x="48" y="553" width="294" height="81"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">제 1 장 환영합니다!
 제 1 조 (목적)
@@ -358,61 +354,91 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-AN-KcR">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-AN-KcR">
                                 <rect key="frame" x="169" y="736" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="회원가입"/>
                                 <connections>
                                     <action selector="btnJoin:" destination="4pZ-uv-EQv" eventType="touchUpInside" id="FWm-Ht-3uQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-0h-Nky">
-                                <rect key="frame" x="54" y="131" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-0h-Nky">
+                                <rect key="frame" x="48" y="304" width="242" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-dX-TVW">
-                                <rect key="frame" x="54" y="183" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-at-6wl">
+                                <rect key="frame" x="48" y="388" width="242" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms3-gQ-NpZ">
-                                <rect key="frame" x="304" y="185" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상세주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrN-D4-XR3">
+                                <rect key="frame" x="48" y="430" width="242" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="우편번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bh-AT-eub">
+                                <rect key="frame" x="48" y="346" width="122" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전화번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0r-Wc-qUf">
+                                <rect key="frame" x="48" y="472" width="242" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-dX-TVW">
+                                <rect key="frame" x="48" y="170" width="242" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms3-gQ-NpZ">
+                                <rect key="frame" x="298" y="172" width="52" height="30"/>
                                 <state key="normal" title="중복확인"/>
                                 <connections>
                                     <action selector="btnJoinEmailCheck:" destination="4pZ-uv-EQv" eventType="touchUpInside" id="zQg-YE-Kr0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-at-6wl">
-                                <rect key="frame" x="54" y="282" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상세주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrN-D4-XR3">
-                                <rect key="frame" x="54" y="324" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="우편번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bh-AT-eub">
-                                <rect key="frame" x="54" y="232" width="122" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전화번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0r-Wc-qUf">
-                                <rect key="frame" x="54" y="458" width="242" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rhp-iK-WSl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rhp-iK-WSl" firstAttribute="bottom" secondItem="7L1-AN-KcR" secondAttribute="bottom" constant="44" id="1NE-WQ-2ik"/>
+                            <constraint firstItem="jKM-dX-TVW" firstAttribute="trailing" secondItem="60J-yg-z0a" secondAttribute="trailing" id="6qV-Xt-Eim"/>
+                            <constraint firstItem="ILH-0h-Nky" firstAttribute="leading" secondItem="2Bh-AT-eub" secondAttribute="leading" id="9jO-tR-iDB"/>
+                            <constraint firstItem="CxC-fb-9Hn" firstAttribute="top" secondItem="60J-yg-z0a" secondAttribute="bottom" constant="8" symbolic="YES" id="BDt-dJ-yyO"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="top" secondItem="gDv-at-6wl" secondAttribute="bottom" constant="8" symbolic="YES" id="C1B-jy-5hV"/>
+                            <constraint firstItem="gDv-at-6wl" firstAttribute="top" secondItem="2Bh-AT-eub" secondAttribute="bottom" constant="8" symbolic="YES" id="CUc-RN-Yhx"/>
+                            <constraint firstItem="2Bh-AT-eub" firstAttribute="top" secondItem="ILH-0h-Nky" secondAttribute="bottom" constant="8" symbolic="YES" id="F2F-8d-CNb"/>
+                            <constraint firstItem="hpF-jA-Lk1" firstAttribute="centerX" secondItem="7L1-AN-KcR" secondAttribute="centerX" id="MCL-ap-uLU"/>
+                            <constraint firstItem="B0r-Wc-qUf" firstAttribute="leading" secondItem="GQb-Ew-84Z" secondAttribute="leading" id="OWH-be-jR4"/>
+                            <constraint firstItem="GQb-Ew-84Z" firstAttribute="centerX" secondItem="hpF-jA-Lk1" secondAttribute="centerX" id="QWR-f1-7Rv"/>
+                            <constraint firstItem="jKM-dX-TVW" firstAttribute="leading" secondItem="Rhp-iK-WSl" secondAttribute="leading" constant="48" id="R3v-sq-969"/>
+                            <constraint firstItem="jKM-dX-TVW" firstAttribute="leading" secondItem="60J-yg-z0a" secondAttribute="leading" id="S1F-GP-pWL"/>
+                            <constraint firstItem="u8c-6f-eM3" firstAttribute="top" secondItem="GQb-Ew-84Z" secondAttribute="bottom" constant="16" id="To5-8o-1hv"/>
+                            <constraint firstItem="ms3-gQ-NpZ" firstAttribute="leading" secondItem="jKM-dX-TVW" secondAttribute="trailing" constant="8" symbolic="YES" id="UKw-0M-DOW"/>
+                            <constraint firstItem="gDv-at-6wl" firstAttribute="trailing" secondItem="rrN-D4-XR3" secondAttribute="trailing" id="UUU-I1-zIv"/>
+                            <constraint firstItem="jKM-dX-TVW" firstAttribute="top" secondItem="Rhp-iK-WSl" secondAttribute="top" constant="82" id="XVI-Ad-bL4"/>
+                            <constraint firstItem="ILH-0h-Nky" firstAttribute="trailing" secondItem="gDv-at-6wl" secondAttribute="trailing" id="Xd3-ef-csJ"/>
+                            <constraint firstItem="GQb-Ew-84Z" firstAttribute="centerX" secondItem="YNi-uV-kZ6" secondAttribute="centerX" id="Yc1-NP-JUE"/>
+                            <constraint firstItem="hpF-jA-Lk1" firstAttribute="top" secondItem="u8c-6f-eM3" secondAttribute="bottom" constant="8" symbolic="YES" id="c3a-GJ-5ak"/>
+                            <constraint firstItem="B0r-Wc-qUf" firstAttribute="top" secondItem="rrN-D4-XR3" secondAttribute="bottom" constant="8" symbolic="YES" id="c4h-GP-g7W"/>
+                            <constraint firstItem="ILH-0h-Nky" firstAttribute="top" secondItem="CxC-fb-9Hn" secondAttribute="bottom" constant="16" id="czx-nS-IuV"/>
+                            <constraint firstItem="2Bh-AT-eub" firstAttribute="leading" secondItem="gDv-at-6wl" secondAttribute="leading" id="gjN-gw-178"/>
+                            <constraint firstItem="60J-yg-z0a" firstAttribute="leading" secondItem="CxC-fb-9Hn" secondAttribute="leading" id="iGm-17-uD1"/>
+                            <constraint firstItem="CxC-fb-9Hn" firstAttribute="leading" secondItem="ILH-0h-Nky" secondAttribute="leading" id="ibc-xk-G0H"/>
+                            <constraint firstItem="u8c-6f-eM3" firstAttribute="trailing" secondItem="7L1-AN-KcR" secondAttribute="trailing" id="kWf-0s-TsJ"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="trailing" secondItem="B0r-Wc-qUf" secondAttribute="trailing" id="khf-m0-Fje"/>
+                            <constraint firstItem="jKM-dX-TVW" firstAttribute="centerY" secondItem="ms3-gQ-NpZ" secondAttribute="centerY" id="ktO-05-nvh"/>
+                            <constraint firstItem="GQb-Ew-84Z" firstAttribute="top" secondItem="B0r-Wc-qUf" secondAttribute="bottom" constant="47" id="nqv-Ch-WNZ"/>
+                            <constraint firstItem="rrN-D4-XR3" firstAttribute="leading" secondItem="B0r-Wc-qUf" secondAttribute="leading" id="qGm-8M-U0h"/>
+                            <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="60J-yg-z0a" secondAttribute="trailing" constant="100" id="quf-ZV-UK4"/>
+                            <constraint firstItem="CxC-fb-9Hn" firstAttribute="trailing" secondItem="ILH-0h-Nky" secondAttribute="trailing" id="ryZ-TC-Mjy"/>
+                            <constraint firstItem="60J-yg-z0a" firstAttribute="top" secondItem="jKM-dX-TVW" secondAttribute="bottom" constant="8" symbolic="YES" id="tKR-tM-jI2"/>
+                            <constraint firstItem="gDv-at-6wl" firstAttribute="leading" secondItem="rrN-D4-XR3" secondAttribute="leading" id="uQp-oV-tTZ"/>
+                            <constraint firstItem="Rhp-iK-WSl" firstAttribute="trailing" secondItem="2Bh-AT-eub" secondAttribute="trailing" constant="220" id="udd-xP-N4G"/>
+                            <constraint firstItem="7L1-AN-KcR" firstAttribute="top" secondItem="hpF-jA-Lk1" secondAttribute="bottom" constant="32" id="uxN-yA-ire"/>
+                            <constraint firstItem="60J-yg-z0a" firstAttribute="trailing" secondItem="CxC-fb-9Hn" secondAttribute="trailing" id="yNs-A7-ysK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="회원가입" id="2eW-gE-cX5"/>
                     <connections>
@@ -422,9 +448,9 @@
                         <outlet property="txtJoinPassword" destination="60J-yg-z0a" id="lIl-bX-7v4"/>
                         <outlet property="txtJoinPasswordCheck" destination="CxC-fb-9Hn" id="4pP-Lb-Tmu"/>
                         <outlet property="txtJoinPostcode" destination="2Bh-AT-eub" id="slt-Yu-KIO"/>
+                        <outlet property="txtJoinTel" destination="B0r-Wc-qUf" id="qOC-4Z-YKc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WoZ-Fi-Qku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-726.15384615384608" y="985.30805687203792"/>
         </scene>
