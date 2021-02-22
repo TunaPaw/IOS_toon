@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     var count = 0
     
     var numImage = 0
-    var imagName = ["ad8.png", "ad1.png", "ad4.png", "ad5.png", "ad2.png", "ad3.png", "ad6.png","ad7.png"]
+    var imagName = ["ad8.png", "ad1.png", "ad4.png", "ad5.png", "ad2.png", "ad6.png","ad7.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
