@@ -7,21 +7,31 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, ContentSelectModelProtocol {
 
     @IBOutlet weak var AdImageView: UIImageView!
+    @IBOutlet weak var NewScrollView: UIScrollView!
+    @IBOutlet weak var FamScrollView: UIScrollView!
+    
+    
+    var feedItem: NSArray = NSArray()
+    
     let timeSelector: Selector = #selector(MainViewController.updateTime)
     let interval = 2.0 // 시간 interval 1초
     var count = 0
-    
     var numImage = 0
     var imagName = ["ad8.png", "ad1.png", "ad4.png", "ad5.png", "ad2.png", "ad6.png","ad7.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
-        displayImage(number: numImage)
+        displayImage(number: numImage)//광고 이미지뷰
+        
+        let contentSelectModel = ContentSelectModel()
+        contentSelectModel.delegate = self
+        contentSelectModel.downloadItems()
     }
     
     @objc func updateTime(){
@@ -44,6 +54,45 @@ class MainViewController: UIViewController {
         AdImageView.image = UIImage(named: imagName[number])
     }
 
+    func itemDownloaded(items:NSArray)  {
+        feedItem = items
+        self.NewScrollView.reloadInputViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        let queryModel = ContentSelectModel()
+        queryModel.delegate = self
+        queryModel.downloadItems()
+    }
+    
+    override func numberOfSections(in NewScrollView: UIScrollView) -> Int{
+        return 1
+    }
+    
+    override func NewScrollView(_ NewScrollView: UIScrollView, numberOfRowsInSection section: Int) -> Int{
+        return feedItem.count
+    }
+    
+    override func NewScrollView(_ NewScrollVIew: UIScrollView, cellForRowAt indexPath:IndexPath)-> UIScrollView{
+        let Cell = NewScrollView.deque
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "sgDetail"{
+//            let cell = sender as! UITableViewCell
+//            let indexPath = self.NewScrollView.indexPath(for: cell)
+//            let detailView = segue.destination as! MainViewController
+//
+//            //let item: Students =  studentsList[(indexPath! as NSIndexPath).row]
+//            let item: ContentDBModel = feedItem[(indexPath!.row)] as! ContentDBModel
+//
+//            let CTitle = item.CTitle!
+//            let CGenre = item.CGenre!
+//            let CCoverImage = item.CCoverImage!
+//
+//            detailView.receiveItems(CTitle, CGenre, CCoverImage)
+//        }
+    }
 
     /*
     // MARK: - Navigation
@@ -55,4 +104,4 @@ class MainViewController: UIViewController {
     }
     */
 
-}
+

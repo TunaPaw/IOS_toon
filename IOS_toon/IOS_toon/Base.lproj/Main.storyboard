@@ -161,6 +161,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="AdImageView" destination="2rv-5t-fZV" id="xHj-o9-1Bd"/>
+                        <outlet property="FamScrollView" destination="PAG-Eo-s08" id="d2K-jd-qJC"/>
+                        <outlet property="NewScrollView" destination="6hj-iP-jXC" id="YHA-jQ-JUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXX-64-egp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
