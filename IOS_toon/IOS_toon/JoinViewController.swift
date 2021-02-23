@@ -7,7 +7,8 @@
 
 import UIKit
 
-class JoinViewController: UIViewController {
+class JoinViewController: UIViewController, JspModelProtocol {
+
 
     @IBOutlet weak var txtJoinName: UITextField!
     @IBOutlet weak var txtJoinEmail: UITextField!
@@ -27,11 +28,40 @@ class JoinViewController: UIViewController {
 //        txtJoinPasswordCheck.textContentType = .newPassword
 //        txtJoinPasswordCheck.isSecureTextEntry = true
       
+        let jspModel = EmailCheckModel()
+        jspModel.delegate = self
+        // let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        // jspModel.checkItems(Email: UEmail)
+    }
+    
+
+    var feedItem: NSArray = NSArray()
+    
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
     }
     
     @IBAction func btnJoinEmailCheck(_ sender: UIButton) {
+        let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let emailCheckModel = EmailCheckModel()
+        _ = emailCheckModel.checkItems(Email: UEmail)
+        
+       
+        if feedItem.count == 0{
+            let resultAlert = UIAlertController(title: "성공", message: "사용가능한 아이디 입니다.", preferredStyle: UIAlertController.Style.alert)
+            let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            resultAlert.addAction(onAction)
+            present(resultAlert, animated: true, completion: nil)
+        }else{
+            let resultAlert = UIAlertController(title: "실패", message: "사용중인 아이디 입니다.", preferredStyle: UIAlertController.Style.alert)
+            let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
+                self.navigationController?.popViewController(animated: true)
+            })
+            resultAlert.addAction(onAction)
+            present(resultAlert, animated: true, completion: nil)
+            
+            }
     }
-    
     /*
     // MARK: - Navigation
 

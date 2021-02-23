@@ -16,6 +16,7 @@ class DBModel: NSObject{
     var UAddr: String?
     var UPassword: String?
     var UPasswordCheck: String?
+    var count: String?
     
     override init() {
         
@@ -28,5 +29,9 @@ class DBModel: NSObject{
         self.UAddr = UAddr
         self.UPassword = UPassword
         self.UPasswordCheck = UPasswordCheck
+    }
+
+    init(count: String) {
+        self.count = count
     }
 }
