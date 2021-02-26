@@ -19,6 +19,8 @@ class ContentDetailViewController: UIViewController {
     @IBOutlet weak var txtGenre: UITextField!
     @IBOutlet weak var txtView: UITextField!
     
+    @IBOutlet weak var detailTableview: UITableView!
+    
     var receivecode = ""
     var receivecover = ""
     var receiveTitle =  ""
@@ -54,6 +56,8 @@ class ContentDetailViewController: UIViewController {
         let url2 = URL(string: "\(receivecover)")
         let request2 = URLRequest(url: url2!)
         webView2.load(request2)
+        
+
        
     }
    
@@ -95,5 +99,6 @@ class ContentDetailViewController: UIViewController {
         receiveepisode = episode
     }
 
+//테이블 뷰 인잇
 
 }

@@ -1060,6 +1060,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="k3N-3a-Ihl"/>
                     <connections>
+                        <outlet property="detailTableview" destination="lpQ-tR-bwc" id="hPa-LV-EKM"/>
                         <outlet property="txtCover" destination="VVf-DF-WmK" id="iez-i6-VVK"/>
                         <outlet property="txtGenre" destination="irp-3J-kRI" id="lBW-8V-KGC"/>
                         <outlet property="txtTitle" destination="3F1-8X-WOv" id="zjY-nc-9Gs"/>
