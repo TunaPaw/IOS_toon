@@ -154,6 +154,7 @@
 				6FBE46D525DE597B00971EFC /* Info.plist */,
 				6F3C5CCD25DE67B500692EF1 /* TableViewController.swift */,
 				6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */,
+				6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */,
 				6F3C5CD325DE6F3000692EF1 /* FindViewController.swift */,
 				6FBE46CB25DE597900971EFC /* ViewController.swift */,
 				A5E79D1425DECC9000909E77 /* SearchViewController.swift */,
@@ -174,7 +175,6 @@
 				6FA415FB25E360AE0018B1A4 /* DBModel.swift */,
 				A50940B625E627AA000D3A84 /* ContentDBModel.swift */,
 				6FA415FE25E363310018B1A4 /* InsertModel.swift */,
-				6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */,
 			);
 			path = IOS_toon;
 			sourceTree = "<group>";

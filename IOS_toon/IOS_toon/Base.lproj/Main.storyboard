@@ -684,6 +684,13 @@
                                     <action selector="btnJoinEmailCheck:" destination="4pZ-uv-EQv" eventType="touchUpInside" id="zQg-YE-Kr0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6i-xN-AEv">
+                                <rect key="frame" x="128" y="128" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rhp-iK-WSl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -728,6 +735,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="회원가입" id="2eW-gE-cX5"/>
                     <connections>
+                        <outlet property="lblEmailCheck" destination="J6i-xN-AEv" id="dSQ-2T-4kL"/>
                         <outlet property="txtJoinAddr" destination="gDv-at-6wl" id="t5f-ep-gzl"/>
                         <outlet property="txtJoinEmail" destination="jKM-dX-TVW" id="b5t-nf-NRz"/>
                         <outlet property="txtJoinName" destination="ILH-0h-Nky" id="dOn-fd-yAl"/>
