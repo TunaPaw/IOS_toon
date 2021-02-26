@@ -30,11 +30,11 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
         self.RecentTableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        let queryModel = RecentTableModel()
-        queryModel.delegate = self
-        queryModel.downloadItems()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        let queryModel = RecentTableModel()
+//        queryModel.delegate = self
+//        queryModel.downloadItems()
+//    }
 
     // MARK: - Table view data source
 
@@ -55,15 +55,16 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
         // Configure the cell...
         let item: ContentDBModel = feedItem[indexPath.row] as! ContentDBModel
         
-        imageurl = "\(item.scode!)"
+        imageurl = "\(item.ccover!)"
         
+     
         
         cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
-        cell.RlbCode?.text = "코드 : \(item.scode!)"
-        cell.RlbView?.text = "조회 : \(item.sphone!)"
-        cell.RlbGenre?.text = "장르 : \(item.sdept!)"
-        cell.RlbTitle?.text = "제목 : \(item.sname!)"
-
+        cell.RlbCover?.text = "커버 : \(item.ccover!)"
+        cell.RlbView?.text = "조회 : \(item.cview!)"
+        cell.RlbGenre?.text = "장르 : \(item.cgenre!)"
+        cell.RlbTitle?.text = "제목 : \(item.ctitle!)"
+      
         return cell
     }
     
@@ -120,12 +121,18 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
             
             let item: ContentDBModel = feedItem[(indexPath!.row)] as! ContentDBModel
             
-            let sid = item.scode!
-            let sname = item.sname!
-            let sdept = item.sdept!
-            let sphone = item.sphone!
+            let code = item.ccode!
+            let cover = item.ccover!
+            let title = item.ctitle!
+            let genre = item.cgenre!
+            let view = item.cview!
+            let insert = item.cinsert!
+            let delete = item.cdelete!
+            let author = item.cauthor!
+            let subtitle = item.csubtitle!
+            let episode = item.cepisode!
 
-            detailView.receiveItems(sid, sname, sdept, sphone)
+            detailView.receiveItems(code, cover, title, genre, view, insert,  delete, author, subtitle, episode)
         }
     }
 

@@ -13,16 +13,22 @@ class ContentDetailViewController: UIViewController {
     @IBOutlet weak var wbImage: WKWebView!
     @IBOutlet weak var webView2: WKWebView!
     
-    @IBOutlet weak var lbCode: UITextField!
-    @IBOutlet weak var lbTitle: UITextField!
-    @IBOutlet weak var lbGenre: UITextField!
-    @IBOutlet weak var lbView: UITextField!
+   
+    @IBOutlet weak var txtCover: UITextField!
+    @IBOutlet weak var txtTitle: UITextField!
+    @IBOutlet weak var txtGenre: UITextField!
+    @IBOutlet weak var txtView: UITextField!
     
-    
-    var receiveId = ""
-    var receiveName =  ""
-    var receiveDept = ""
-    var receivePhone = ""
+    var receivecode = ""
+    var receivecover = ""
+    var receiveTitle =  ""
+    var receiveGenre = ""
+    var receiveView = ""
+    var receiveinsert = ""
+    var receivedelete = ""
+    var receiveAuthor = ""
+    var receivesubtitle = ""
+    var receiveepisode = ""
     
     var db: OpaquePointer?
     var detailList:[ContentDBModel] = []
@@ -33,19 +39,19 @@ class ContentDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lbCode.text = receiveId
-        lbTitle.text = receiveName
-        lbGenre.text = receiveDept
-        lbView.text = receivePhone
+        txtCover.text = receivecover
+        txtTitle.text = receiveTitle
+        txtGenre.text = receiveGenre
+        txtView.text = receiveView
         // Do any additional setup after loading the view.
         
-        let url = URL(string: "\(receiveId)")
+        let url = URL(string: "\(receivecover)")
         let request = URLRequest(url: url!)
 
         self.wbImage.load(request)
         
-        
-        let url2 = URL(string: "https://www.youtube.com/watch?v=vaTZnfpBDEI")
+        //https://www.youtube.com/watch?v=vaTZnfpBDEI
+        let url2 = URL(string: "\(receivecover)")
         let request2 = URLRequest(url: url2!)
         webView2.load(request2)
        
@@ -74,11 +80,19 @@ class ContentDetailViewController: UIViewController {
         present(userAlert, animated: true, completion: nil)
     }
     
-    func receiveItems(_ id: String, _ name: String, _ dept: String, _ phone: String){
-        receiveId = id
-        receiveName = name
-        receiveDept = dept
-        receivePhone = phone
+    func receiveItems( _ code: String, _ cover: String, _ title: String, _ genre: String, _ view: String, _ insert: String, _ delete: String, _ author: String, _ subtitle: String, _ episode: String){
+        
+        
+        receivecode = code
+        receivecover = cover
+        receiveTitle =  title
+        receiveGenre = genre
+        receiveView = view
+        receiveinsert = insert
+        receivedelete = delete
+        receiveAuthor = author
+        receivedelete = subtitle
+        receiveepisode = episode
     }
 
 

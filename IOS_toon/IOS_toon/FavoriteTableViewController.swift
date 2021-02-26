@@ -48,15 +48,16 @@ class FavoriteTableViewController: UITableViewController, FavoriteTableModelProt
         // Configure the cell...
         let item: ContentDBModel = feedItem[indexPath.row] as! ContentDBModel
         
-        imageurl = "\(item.scode!)"
+        imageurl = "\(item.ccover!)"
         
         
         cell.fwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
-        cell.lbCode?.text = "코드 : \(item.scode!)"
-        cell.lbView?.text = "조회 : \(item.sphone!)"
-        cell.lbGenre?.text = "장르 : \(item.sdept!)"
-        cell.lbTitle?.text = "제목 : \(item.sname!)"
+        cell.lbCode?.text = "코드 : \(item.ccover!)"
+        cell.lbView?.text = "조회 : \(item.cview!)"
+        cell.lbGenre?.text = "장르 : \(item.cgenre!)"
+        cell.lbTitle?.text = "제목 : \(item.ctitle!)"
         
+        print("\(item.ccover!)")
         
         
         return cell
@@ -115,12 +116,18 @@ class FavoriteTableViewController: UITableViewController, FavoriteTableModelProt
             
             let item: ContentDBModel = feedItem[(indexPath!.row)] as! ContentDBModel
             
-            let sid = item.scode!
-            let sname = item.sname!
-            let sdept = item.sdept!
-            let sphone = item.sphone!
+            let code = item.ccode!
+            let cover = item.ccover!
+            let title = item.ctitle!
+            let genre = item.cgenre!
+            let view = item.cview!
+            let insert = item.cinsert!
+            let delete = item.cdelete!
+            let author = item.cauthor!
+            let subtitle = item.csubtitle!
+            let episode = item.cepisode!
 
-            detailView.receiveItems(sid, sname, sdept, sphone)
+            detailView.receiveItems(code, cover, title, genre, view, insert,  delete, author, subtitle, episode)
         }
     }
 

@@ -13,7 +13,7 @@ protocol RecentTableModelProtocol: class {
 
 class RecentTableModel {
     var delegate: RecentTableModelProtocol!
-    let urlPath = "http://127.0.0.1:8080/iosproject/favoriteRead.jsp"
+    let urlPath = "http://127.0.0.1:8080/iosproject/recentRead.jsp"
 
     func downloadItems(){
         let url = URL(string: urlPath)!
@@ -43,21 +43,41 @@ class RecentTableModel {
         
         for i in 0..<jasonResult.count{
             jsonElement = jasonResult[i] as! NSDictionary
-            let query = ContentDBModel()
             
-            if let scode = jsonElement["code"] as? String,
-               let sname = jsonElement["name"] as? String,
-               let sdept = jsonElement["dept"] as? String,
-               let sphone = jsonElement["phone"] as? String{
-                query.scode = scode
-                query.sname = sname
-                query.sdept = sdept
-                query.sphone = sphone
-        }
+            
+            let query = ContentDBModel()
+            if let ccode = jsonElement["code"] as? String,
+               let cauthor = jsonElement["author"] as? String,
+               let ccover = jsonElement["cover"] as? String,
+               let ctitle = jsonElement["title"] as? String,
+               let cgenre = jsonElement["genre"] as? String,
+               let cepisode = jsonElement["episode"] as? String,
+               let cview = jsonElement["view"] as? String,
+               let cinsert = jsonElement["insert"] as? String,
+               let cdelete = jsonElement["delete"] as? String,
+               let csubtitle = jsonElement["subtitle"] as? String{
+             
+//                (ccode: ccode, cauthor: cauthor, ccover: ccover, ctitle: ctitle, cgenre: cgenre, cepisode: cepisode, cview: cview, cinsert: cinsert, cdelete: cdelete, csubtitle: csubtitle)
+               
+                query.ccode = ccode
+                query.cauthor = cauthor
+                query.ccover = ccover
+                query.ctitle = ctitle
+                query.cgenre = cgenre
+                query.cepisode = cepisode
+                query.cview = cview
+                query.cinsert = cinsert
+                query.cdelete = cdelete
+                query.csubtitle = csubtitle
+//
+                
+           
+            }
             locations.add(query)
     }
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.itemDownloaded(items: locations)
+            print("테이블 모델 파싱: \(locations)")
         })
     }
 }

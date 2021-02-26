@@ -55,17 +55,17 @@ class BookTableViewController: UITableViewController, BookTableModelProtocol {
         // Configure the cell...
         let item: ContentDBModel = feedItem[indexPath.row] as! ContentDBModel
         
-        imageurl = "\(item.scode!)"
+        imageurl = "\(item.ccover!)"
         
         
         cell.BwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
-        cell.BlbCode?.text = "코드 : \(item.scode!)"
-        cell.BlbView?.text = "조회 : \(item.sphone!)"
-        cell.BlbGenre?.text = "장르 : \(item.sdept!)"
-        cell.BlbTitle?.text = "제목 : \(item.sname!)"
+        cell.BlbCode?.text = "코드 : \(item.ccover!)"
+        cell.BlbView?.text = "조회 : \(item.cview!)"
+        cell.BlbGenre?.text = "장르 : \(item.cgenre!)"
+        cell.BlbTitle?.text = "제목 : \(item.ctitle!)"
         
         //webview2.load(URLRequest(url: URL(fileURLWithPath: "https://www.youtube.com/watch?v=\(videoId)")))
-        
+        print("\(item.ccover!)")
         return cell
     }
 
@@ -126,12 +126,18 @@ class BookTableViewController: UITableViewController, BookTableModelProtocol {
             
             let item: ContentDBModel = feedItem[(indexPath!.row)] as! ContentDBModel
             
-            let sid = item.scode!
-            let sname = item.sname!
-            let sdept = item.sdept!
-            let sphone = item.sphone!
+            let code = item.ccode!
+            let cover = item.ccover!
+            let title = item.ctitle!
+            let genre = item.cgenre!
+            let view = item.cview!
+            let insert = item.cinsert!
+            let delete = item.cdelete!
+            let author = item.cauthor!
+            let subtitle = item.csubtitle!
+            let episode = item.cepisode!
 
-            detailView.receiveItems(sid, sname, sdept, sphone)
+            detailView.receiveItems(code, cover, title, genre, view, insert,  delete, author, subtitle, episode)
         }
     }
 }
