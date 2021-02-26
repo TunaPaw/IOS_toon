@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JoinViewController: UIViewController, JspModelProtocol {
+class JoinViewController: UIViewController, JspModelProtocol, UIWebViewDelegate {
   
     
 

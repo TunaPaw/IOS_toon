@@ -5,7 +5,7 @@ class KakaoZipCodeVCViewController: UIViewController {
 
     // MARK: - Properties
     var webView: WKWebView?
-    let indicator = UIActivityIndicatorView(style: .medium)
+    let indicator = UIActivityIndicatorView(style: .large)
     var address: String = ""
 
     // MARK: - Lifecycle
@@ -62,13 +62,19 @@ extension KakaoZipCodeVCViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if let data = message.body as? [String: Any] {
             address = data["roadAddress"] as? String ?? ""
+            guard let previousVC = presentingViewController as? JoinViewController else { return }
+            previousVC.txtJoinAddr.text = address
+            self.dismiss(animated: true, completion: nil)
+            print(address)
+            
+            
         }
-        guard let previousVC = presentingViewController as? JoinViewController else { return }
-        previousVC.txtJoinPostcode.text = address
-        self.dismiss(animated: true, completion: nil)
-        
+//        guard let previousVC = presentingViewController as? JoinViewController else { return }
+//        previousVC.txtJoinAddr.text = address
+//        self.dismiss(animated: true, completion: nil)
+//        print("두번째\(address)")
+//        }
     }
-    
 }
 
 extension KakaoZipCodeVCViewController: WKNavigationDelegate {
