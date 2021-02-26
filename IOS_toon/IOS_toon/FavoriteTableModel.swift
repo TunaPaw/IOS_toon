@@ -13,7 +13,7 @@ protocol FavoriteTableModelProtocol: class {
     
     class FavoriteTableModel: NSObject {
         var delegate: FavoriteTableModelProtocol!
-        let urlPath = "http://127.0.0.1:8080/iosproject/favoriteRead.jsp"
+        let urlPath = "http://127.0.0.1:8080/iosproject/recentRead.jsp"
         
         func downloadItems(){
             let url = URL(string: urlPath)!
@@ -43,17 +43,37 @@ protocol FavoriteTableModelProtocol: class {
             for i in 0..<jsonResult.count{
                 jsonElement = jsonResult[i] as! NSDictionary
             
-            if let scode = jsonElement["code"] as? String,
-               let sname = jsonElement["name"]as? String,
-               let sdept = jsonElement["dept"]as? String,
-               let sphone = jsonElement["phone"]as? String{
-                let query = ContentDBModel(scode: scode, sname: sname, sdept: sdept, sphone: sphone)
+                let query = ContentDBModel()
+                if let ccode = jsonElement["code"] as? String,
+                   let cauthor = jsonElement["author"] as? String,
+                   let ccover = jsonElement["cover"] as? String,
+                   let ctitle = jsonElement["title"] as? String,
+                   let cgenre = jsonElement["genre"] as? String,
+                   let cepisode = jsonElement["episode"] as? String,
+                   let cview = jsonElement["view"] as? String,
+                   let cinsert = jsonElement["insert"] as? String,
+                   let cdelete = jsonElement["delete"] as? String,
+                   let csubtitle = jsonElement["subtitle"] as? String{
+             
                 
-                locations.add(query)
+                    query.ccode = ccode
+                    query.cauthor = cauthor
+                    query.ccover = ccover
+                    query.ctitle = ctitle
+                    query.cgenre = cgenre
+                    query.cepisode = cepisode
+                    query.cview = cview
+                    query.cinsert = cinsert
+                    query.cdelete = cdelete
+                    query.csubtitle = csubtitle
+    //
+                
             }
+                locations.add(query)
         }
         DispatchQueue.main.async(execute: {() -> Void in
         self.delegate.itemDownloaded(items: locations)
+            print(locations)
         })
     }
 }

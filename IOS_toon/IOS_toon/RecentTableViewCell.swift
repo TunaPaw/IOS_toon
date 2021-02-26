@@ -10,10 +10,11 @@ import WebKit
 
 class RecentTableViewCell: UITableViewCell {
     @IBOutlet weak var RwbImage: WKWebView!
-    @IBOutlet weak var RlbCode: UILabel!
     @IBOutlet weak var RlbView: UILabel!
     @IBOutlet weak var RlbTitle: UILabel!
     @IBOutlet weak var RlbGenre: UILabel!
+    @IBOutlet weak var RlbCover: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

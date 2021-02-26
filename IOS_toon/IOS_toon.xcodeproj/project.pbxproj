@@ -37,6 +37,8 @@
 		A50940E225E65112000D3A84 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940E125E65112000D3A84 /* BookTableViewCell.swift */; };
 		A5D1F0C425E7E1A900751EB0 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D1F0C325E7E1A900751EB0 /* back1.png */; };
 		A5D1F0CF25E7EA6900751EB0 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */; };
+		A5D1F0DD25E8F5AE00751EB0 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D1F0DB25E8F5AE00751EB0 /* icon1.png */; };
+		A5D1F0DE25E8F5AE00751EB0 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D1F0DC25E8F5AE00751EB0 /* icon2.png */; };
 		A5E79CFF25DEA97000909E77 /* ad2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E79CFC25DEA97000909E77 /* ad2.png */; };
 		A5E79D0125DEA97000909E77 /* ad1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E79CFE25DEA97000909E77 /* ad1.png */; };
 		A5E79D0C25DEAC9C00909E77 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E79D0B25DEAC9B00909E77 /* MainViewController.swift */; };
@@ -84,6 +86,8 @@
 		A50940E125E65112000D3A84 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		A5D1F0C325E7E1A900751EB0 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
 		A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
+		A5D1F0DB25E8F5AE00751EB0 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon1.png; path = ../../../../../../Desktop/icon1.png; sourceTree = "<group>"; };
+		A5D1F0DC25E8F5AE00751EB0 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon2.png; path = ../../../../../../Desktop/icon2.png; sourceTree = "<group>"; };
 		A5E79CFC25DEA97000909E77 /* ad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad2.png; sourceTree = "<group>"; };
 		A5E79CFE25DEA97000909E77 /* ad1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad1.png; sourceTree = "<group>"; };
 		A5E79D0B25DEAC9B00909E77 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				6FBE46D525DE597B00971EFC /* Info.plist */,
 				6F3C5CCD25DE67B500692EF1 /* TableViewController.swift */,
 				6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */,
+				6FA415FE25E363310018B1A4 /* InsertModel.swift */,
 				6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */,
 				6F3C5CD325DE6F3000692EF1 /* FindViewController.swift */,
 				6FBE46CB25DE597900971EFC /* ViewController.swift */,
@@ -170,7 +175,6 @@
 				6F3C5CD025DE6A0500692EF1 /* Share.swift */,
 				6FA415FB25E360AE0018B1A4 /* DBModel.swift */,
 				A50940B625E627AA000D3A84 /* ContentDBModel.swift */,
-				6FA415FE25E363310018B1A4 /* InsertModel.swift */,
 			);
 			path = IOS_toon;
 			sourceTree = "<group>";
@@ -187,6 +191,8 @@
 		A5E79CF325DEA83800909E77 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A5D1F0DB25E8F5AE00751EB0 /* icon1.png */,
+				A5D1F0DC25E8F5AE00751EB0 /* icon2.png */,
 				A5D1F0C325E7E1A900751EB0 /* back1.png */,
 				A50461CF25E65E1B00ED1D0F /* icon4.png */,
 				A50461CE25E65E1B00ED1D0F /* icon5.png */,
@@ -267,6 +273,7 @@
 				A50461D125E65E1B00ED1D0F /* icon8.png in Resources */,
 				A5E79D2C25DEEA6A00909E77 /* ad8.png in Resources */,
 				A5E79D0125DEA97000909E77 /* ad1.png in Resources */,
+				A5D1F0DD25E8F5AE00751EB0 /* icon1.png in Resources */,
 				6FBE46D425DE597B00971EFC /* LaunchScreen.storyboard in Resources */,
 				A5E79D2225DEDEAF00909E77 /* ad5.png in Resources */,
 				A50461D025E65E1B00ED1D0F /* icon6psd.png in Resources */,
@@ -279,6 +286,7 @@
 				A5E79D2025DEDEAF00909E77 /* ad4.png in Resources */,
 				A5E79D2325DEDEAF00909E77 /* ad6.png in Resources */,
 				A50461CA25E65D3500ED1D0F /* icon3.png in Resources */,
+				A5D1F0DE25E8F5AE00751EB0 /* icon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
