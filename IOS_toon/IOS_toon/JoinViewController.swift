@@ -78,7 +78,10 @@ class JoinViewController: UIViewController, JspModelProtocol {
         }
         */
         
-        
+    @IBAction func agreeCheck(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    
         @IBAction func btnJoin(_ sender: UIButton) {
             let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let UName = txtJoinName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -100,6 +103,11 @@ class JoinViewController: UIViewController, JspModelProtocol {
                 displayAlertMessage(userMessage: "비밀번호가 일치하지 않습니다.");
                 txtJoinPassword.text = ""
                 txtJoinPasswordCheck.text = ""
+                
+                let password = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,}$")
+                password.evaluate(with: "Password1") // True
+                password.evaluate(with: "Password") // False
+                password.evaluate(with: "password") // False
             }
             
             if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == "" || UTel == "" || lblEmailCheck.text == nil){
