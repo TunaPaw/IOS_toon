@@ -82,6 +82,19 @@ class JoinViewController: UIViewController, JspModelProtocol {
         sender.isSelected.toggle()
     }
     
+    func isValidEmailAddress(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: email)
+    }
+
+    // 정규표현식을 사용하여 password 형식이 맞는지 검증 (영+숫자 8글자 이상)
+    func isVailedPassword(password: String) -> Bool {
+        let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
+        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+        return passwordTest.evaluate(with: password)
+    }
+    
         @IBAction func btnJoin(_ sender: UIButton) {
             let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let UName = txtJoinName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -97,18 +110,30 @@ class JoinViewController: UIViewController, JspModelProtocol {
                 myAlert.addAction(okAction)
                 self.present(myAlert, animated:true, completion:nil);
             }
-           
             
             if(UPassword != UPasswordCheck){
                 displayAlertMessage(userMessage: "비밀번호가 일치하지 않습니다.");
                 txtJoinPassword.text = ""
                 txtJoinPasswordCheck.text = ""
-                
-                let password = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,}$")
-                password.evaluate(with: "Password1") // True
-                password.evaluate(with: "Password") // False
-                password.evaluate(with: "password") // False
             }
+            
+            if !isValidEmailAddress(email: UEmail){
+                let myAlert = UIAlertController(title: "알림", message: "이메일 형식을 확인하세요!", preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                myAlert.addAction(okAction)
+                self.present(myAlert, animated:true, completion:nil);
+            }
+            
+            if !isVailedPassword(password: UPassword) {
+                let myAlert = UIAlertController(title: "알림", message: "비밀번호는 영문과 숫자를 포함한 8글자 이상이어야합니다!", preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                myAlert.addAction(okAction)
+                self.present(myAlert, animated:true, completion:nil);
+            }
+            
+            
+            
+            
             
             if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == "" || UTel == "" || lblEmailCheck.text == nil){
             displayAlertMessage(userMessage: "빈칸과 이메일 중복체크를 확인해주세요");
@@ -133,9 +158,21 @@ class JoinViewController: UIViewController, JspModelProtocol {
             }
             
         }
+            
+    
+
+           
+            
 
             
+
+            
+            
+            
+
+
         }
+        
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
