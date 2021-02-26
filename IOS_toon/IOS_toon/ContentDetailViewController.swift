@@ -14,12 +14,14 @@ class ContentDetailViewController: UIViewController {
     @IBOutlet weak var webView2: WKWebView!
     
    
-    @IBOutlet weak var txtCover: UITextField!
+
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var txtGenre: UITextField!
     @IBOutlet weak var txtView: UITextField!
+    @IBOutlet weak var txtAuthor: UITextField!
+    @IBOutlet weak var txtEpisode: UITextField!
     
-    @IBOutlet weak var detailTableview: UITableView!
+    @IBOutlet weak var tvSubTitle: UITextView!
     
     var receivecode = ""
     var receivecover = ""
@@ -41,10 +43,14 @@ class ContentDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        txtCover.text = receivecover
+        
         txtTitle.text = receiveTitle
         txtGenre.text = receiveGenre
         txtView.text = receiveView
+        txtAuthor.text = receiveAuthor
+        txtEpisode.text = "총 \(receiveepisode)회차"
+        
+        tvSubTitle.text = "\(receivesubtitle)"
         // Do any additional setup after loading the view.
         
         let url = URL(string: "\(receivecover)")
@@ -57,6 +63,7 @@ class ContentDetailViewController: UIViewController {
         let request2 = URLRequest(url: url2!)
         webView2.load(request2)
         
+        print("\(receivesubtitle)")
 
        
     }

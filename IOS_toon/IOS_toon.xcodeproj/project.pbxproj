@@ -177,11 +177,10 @@
 				6F3C5CD025DE6A0500692EF1 /* Share.swift */,
 				6FA415FB25E360AE0018B1A4 /* DBModel.swift */,
 				A50940B625E627AA000D3A84 /* ContentDBModel.swift */,
-<<<<<<< HEAD
+
 				6FA415FE25E363310018B1A4 /* InsertModel.swift */,
 				6F472D4F25E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift */,
-=======
->>>>>>> 0dd9f044925d07f666877f3008960cc6e2dc7dd1
+
 			);
 			path = IOS_toon;
 			sourceTree = "<group>";

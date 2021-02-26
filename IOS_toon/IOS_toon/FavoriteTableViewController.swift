@@ -52,7 +52,7 @@ class FavoriteTableViewController: UITableViewController, FavoriteTableModelProt
         
         
         cell.fwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
-        cell.lbCode?.text = "코드 : \(item.ccover!)"
+    
         cell.lbView?.text = "조회 : \(item.cview!)"
         cell.lbGenre?.text = "장르 : \(item.cgenre!)"
         cell.lbTitle?.text = "제목 : \(item.ctitle!)"

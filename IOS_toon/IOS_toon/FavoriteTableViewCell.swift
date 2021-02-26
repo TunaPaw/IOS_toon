@@ -13,7 +13,7 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var lbGenre: UILabel!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbView: UILabel!
-    @IBOutlet weak var lbCode: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
