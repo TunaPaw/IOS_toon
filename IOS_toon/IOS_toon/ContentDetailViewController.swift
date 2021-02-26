@@ -44,8 +44,8 @@ class ContentDetailViewController: UIViewController {
 
         self.wbImage.load(request)
         
-        
-        let url2 = URL(string: "https://www.youtube.com/watch?v=vaTZnfpBDEI")
+        //https://www.youtube.com/watch?v=vaTZnfpBDEI
+        let url2 = URL(string: "\(receiveId)")
         let request2 = URLRequest(url: url2!)
         webView2.load(request2)
        

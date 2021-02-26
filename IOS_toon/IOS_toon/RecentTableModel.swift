@@ -13,7 +13,7 @@ protocol RecentTableModelProtocol: class {
 
 class RecentTableModel {
     var delegate: RecentTableModelProtocol!
-    let urlPath = "http://127.0.0.1:8080/iosproject/favoriteRead.jsp"
+    let urlPath = "http://127.0.0.1:8080/iosproject/recentRead.jsp"
 
     func downloadItems(){
         let url = URL(string: urlPath)!
