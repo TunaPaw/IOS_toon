@@ -27,7 +27,7 @@ class MyPageViewController: UIViewController {
 
     func secondAnimation() {
     //animate second label
-    UIView.animate(withDuration: 2.0, delay: 0.5, options: [], animations: {
+    UIView.animate(withDuration: 1.8, delay: 0.5, options: [], animations: {
     self.btnWithdrawal.center.y -= self.view.bounds.height
     }, completion:nil)
     }

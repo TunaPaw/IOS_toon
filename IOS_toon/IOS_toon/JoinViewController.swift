@@ -10,13 +10,6 @@ import UIKit
 class JoinViewController: UIViewController, JspModelProtocol {
 
 
-    
-
-    
-
-    
-
-
     @IBOutlet weak var txtJoinName: UITextField!
     @IBOutlet weak var txtJoinEmail: UITextField!
     @IBOutlet weak var txtJoinPostcode: UITextField!
@@ -27,61 +20,48 @@ class JoinViewController: UIViewController, JspModelProtocol {
     
     
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        txtJoinPassword.textContentType = .newPassword
 //        txtJoinPassword.isSecureTextEntry = true
 //        txtJoinPasswordCheck.textContentType = .newPassword
 //        txtJoinPasswordCheck.isSecureTextEntry = true
-        let emailCheckModel = EmailCheckModel()
-        emailCheckModel.delegate = self
-        
-
+      
+        let jspModel = EmailCheckModel()
+        jspModel.delegate = self
+        // let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        // jspModel.checkItems(Email: UEmail)
     }
     
 
-   // var feedItem: NSArray = NSArray()
-
-    var feedItem: String = ""
+    var feedItem: NSArray = NSArray()
     
-    func itemDownloaded(items: String) {
+    func itemDownloaded(items: NSArray) {
         feedItem = items
-        print("아이템다운로드\(feedItem)")
     }
-
-    
     
     @IBAction func btnJoinEmailCheck(_ sender: UIButton) {
-        
+        let UEmail = txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let emailCheckModel = EmailCheckModel()
-        emailCheckModel.delegate = self
-        emailCheckModel.checkItems(Email: txtJoinEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+        _ = emailCheckModel.checkItems(Email: UEmail)
         
-        
-        
-        print("joinview\(feedItem)")
        
-        if Int(feedItem) == 0{
+        if feedItem.count == 0{
             let resultAlert = UIAlertController(title: "성공", message: "사용가능한 아이디 입니다.", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
-        }else if Int(feedItem) == 1{
+        }else{
             let resultAlert = UIAlertController(title: "실패", message: "사용중인 아이디 입니다.", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
-               
+                self.navigationController?.popViewController(animated: true)
             })
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
-
+            
             }
-        
-        
     }
-    
- 
-    
     /*
     // MARK: - Navigation
 

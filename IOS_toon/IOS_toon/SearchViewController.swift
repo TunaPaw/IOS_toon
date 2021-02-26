@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
 
+    @IBOutlet weak var SearchView: UIView!
     @IBOutlet weak var SearchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -17,19 +18,19 @@ class SearchViewController: UIViewController {
         
         secondAnimation()
         
-        guard let text = """
- <div class="search-wrapper">
-    <div class="input-holder">
-        <input type="text" class="search-input" placeholder="Type to search" />
-        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-    </div>
-    <span class="close" onclick="searchToggle(this, event);"></span>
-</div>
-""".data(using: String.Encoding.unicode) else {
-
-                    return
-
-                }
+//        guard let text = """
+// <div class="search-wrapper">
+//    <div class="input-holder">
+//        <input type="text" class="search-input" placeholder="Type to search" />
+//        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+//    </div>
+//    <span class="close" onclick="searchToggle(this, event);"></span>
+//</div>
+//""".data(using: String.Encoding.unicode) else {
+//
+//                    return
+//
+//                }
 
 //                try? mTvText.attributedText = NSAttributedString(data: text, options: [.documentType:NSAttributedString.DocumentType.html], documentAttributes: nil)
 //
@@ -38,16 +39,19 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {//애니메이션
     super.viewWillAppear(animated)
-    SearchBar.center.y -= view.bounds.height //위에 숨겨져 있음
+    SearchView.center.y -= view.bounds.height //위에 숨겨져 있음
 //    secondLabel.center.y += view.bounds.height //아래에 숨겨져있음
   // hiddenLabel.alpha = 0.0 // 알파0
     }
     func secondAnimation() {
     //animate second label
-        UIView.animate(withDuration: 2.0, delay: -0.1, options: [], animations: {
-    self.SearchBar.center.y += self.view.bounds.height
-    }, completion:nil)
+        UIView.animate(withDuration: 1.1, delay: 0.0, options: [], animations: {
+        self.SearchView.center.y += self.view.bounds.height
+        }, completion:nil)
     }
+    @IBAction func btnSearch(_ sender: UIButton) {
+    }
+    
 
     /*
     // MARK: - Navigation

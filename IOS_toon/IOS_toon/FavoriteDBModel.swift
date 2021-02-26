@@ -1,5 +1,5 @@
 //
-//  ContentDBModel.swift
+//  FavoriteDBModel.swift
 //  IOS_toon
 //
 //  Created by Tuna on 2021/02/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ContentDBModel: NSObject {
+class FavoriteDBModel: NSObject {
     
     var scode: String?
     var sname: String?
