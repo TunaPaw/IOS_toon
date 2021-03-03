@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var PopCollection: UICollectionView!
     @IBOutlet weak var adPage: UIPageControl!
     @IBOutlet weak var AdImageView: UIImageView!
     let timeSelector: Selector = #selector(MainViewController.updateTime)

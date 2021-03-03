@@ -143,26 +143,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-vr-FRk">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-vr-FRk">
                                 <rect key="frame" x="0.0" y="568" width="390" height="177"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YEt-TP-Jdf">
-                                    <size key="itemSize" width="119" height="164"/>
+                                    <size key="itemSize" width="101" height="164"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oc8-xE-kLU">
-                                        <rect key="frame" x="0.0" y="6.666666666666667" width="119" height="164"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopCell" id="oc8-xE-kLU" customClass="MainPopCollectionViewCell" customModule="IOS_toon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="6.666666666666667" width="101" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5cs-ov-n0O">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="164"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Tk-Y3-IuO">
-                                                    <rect key="frame" x="4" y="3" width="111" height="156"/>
+                                                    <rect key="frame" x="0.0" y="-1" width="101" height="134"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <wkWebViewConfiguration key="configuration">
@@ -170,9 +169,16 @@
                                                         <wkPreferences key="preferences"/>
                                                     </wkWebViewConfiguration>
                                                 </wkWebView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-IT-c0c">
+                                                    <rect key="frame" x="8" y="140" width="85" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="119" height="164"/>
+                                        <size key="customSize" width="101" height="164"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -186,6 +192,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lKI-gr-pIZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hNy-vr-FRk" firstAttribute="top" secondItem="lKI-gr-pIZ" secondAttribute="top" constant="480" id="0rf-Ip-3Fg"/>
+                            <constraint firstItem="hNy-vr-FRk" firstAttribute="leading" secondItem="lKI-gr-pIZ" secondAttribute="leading" id="3Mo-dA-MA8"/>
+                            <constraint firstItem="lKI-gr-pIZ" firstAttribute="bottom" secondItem="hNy-vr-FRk" secondAttribute="bottom" constant="16" id="BdE-pZ-t1V"/>
+                            <constraint firstItem="lKI-gr-pIZ" firstAttribute="trailing" secondItem="hNy-vr-FRk" secondAttribute="trailing" id="nD5-1p-ROl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="tv.fill" catalog="system" id="2F3-MX-25B"/>
                     <navigationItem key="navigationItem" title="Title" id="beY-6W-wYD"/>
@@ -1315,7 +1327,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3SV-os-gUO"/>
+        <segue reference="DiL-D4-UrY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ad1.png" width="807" height="409"/>
