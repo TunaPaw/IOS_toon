@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginModelProtocol {
+
+    
     @IBOutlet weak var txtUserId: UITextField!
     @IBOutlet weak var txtUserPassword: UITextField!
    
@@ -15,26 +17,47 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.txtUserId.becomeFirstResponder()
 //  self.view.backgroundColor = UIColor(patternImage: UIImage(named: "back2.jpg")!)
     }
 
     @IBAction func btnOk(_ sender: UIButton) {
-        if txtUserId.text == "aaa" && txtUserPassword.text == "1111"{
-            Share.userID = txtUserId.text!
-                    self.performSegue(withIdentifier: "afterChecking", sender: self) // segue로 넘겨주는
-                }else{
-                    let userAlert = UIAlertController(title: "경고", message: "ID나 암호가 틀렸습니다", preferredStyle: UIAlertController.Style.actionSheet)
-                    let onAction = UIAlertAction(title: "네, 알겠습니다", style: UIAlertAction.Style.default, handler: nil)
-                    userAlert.addAction(onAction)
-                    present(userAlert, animated: true, completion: nil)
-                }
+        
+        let UEmail = txtUserId.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let UPassword = txtUserPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let loginCheckModel = LoginModel()
+        loginCheckModel.delegate = self
+        loginCheckModel.checkItems(UserId: UEmail, UserPw: UPassword)
     }
+
+    
+    var feedItem: String = ""
+    func itemDownloaded(items: String) {
+        feedItem = items
+        if Int(feedItem) == 1{
+            Share.userID = self.txtUserId.text!
+            self.performSegue(withIdentifier: "afterChecking", sender: self)
+        }else if Int(feedItem) == 0{
+            let myAlert = UIAlertController(title: "알림", message: "ID와 비밀번호를 확인하세요!", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            myAlert.addAction(okAction)
+            self.present(myAlert, animated:true, completion:nil);
+            txtUserPassword.text = ""
+            txtUserId.text = ""
+            self.txtUserId.becomeFirstResponder()
+        }
+    }
+    
     
     @IBAction func btnGuest(_ sender: UIButton) {
         self.performSegue(withIdentifier: "afterChecking", sender: self)
     }
-
-
+    
+// 키보드 숨기기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
 
