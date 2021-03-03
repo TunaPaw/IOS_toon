@@ -203,6 +203,7 @@
                     <navigationItem key="navigationItem" title="Title" id="beY-6W-wYD"/>
                     <connections>
                         <outlet property="AdImageView" destination="2rv-5t-fZV" id="xHj-o9-1Bd"/>
+                        <outlet property="PopCollection" destination="hNy-vr-FRk" id="Oph-wa-d5c"/>
                         <outlet property="adPage" destination="ejU-1W-2sj" id="isz-GI-EL0"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,14 @@ import UIKit
 
 
 class MainViewController: UIViewController {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+    
 
     @IBOutlet weak var PopCollection: UICollectionView!
     @IBOutlet weak var adPage: UIPageControl!
@@ -28,6 +36,9 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
         displayImage(number: numImage)
+//        PopCollection.delegate = self
+//        PopCollection.dataSource = self
+//        PopCollection.reloadData()
         
         //페이징
         adPage.numberOfPages = imagName.count
