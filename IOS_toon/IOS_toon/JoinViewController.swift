@@ -23,17 +23,25 @@ class JoinViewController: UIViewController, JspModelProtocol, UIWebViewDelegate 
     
     @IBOutlet weak var lblEmailCheck: UILabel!
     
+    var address: String = ""
     var agreeBool: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-                txtJoinPassword.textContentType = .newPassword
-                txtJoinPassword.isSecureTextEntry = true
-                txtJoinPasswordCheck.textContentType = .newPassword
-                txtJoinPasswordCheck.isSecureTextEntry = true
-                lblEmailCheck.text = "중복확인을 해주세요"
-
+//                txtJoinPassword.textContentType = .newPassword
+//                txtJoinPassword.isSecureTextEntry = true
+//                txtJoinPasswordCheck.textContentType = .newPassword
+//                txtJoinPasswordCheck.isSecureTextEntry = true
+//                lblEmailCheck.text = "중복확인을 해주세요"
+        self.txtJoinAddr.text = address
+        print("viewdidload\(address)")
+        txtJoinAddr.text = Share.Addr
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.txtJoinAddr.text = address
+print("viewwillappear\(address)")
+        txtJoinAddr.text = Share.Addr
+    }
 
         var feedItem: String = ""
         
@@ -159,7 +167,7 @@ class JoinViewController: UIViewController, JspModelProtocol, UIWebViewDelegate 
         
 
     @IBAction func btnPostCode(_ sender: UIButton) {
-        let nextVC = KakaoZipCodeVCViewController()
+        let nextVC = KakaoZipCodeVC()
         present(nextVC, animated: true)
     }
 }
