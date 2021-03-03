@@ -1,21 +1,19 @@
 //
-//  RecentTableViewCell.swift
+//  ReviewTableViewCell.swift
 //  IOS_toon
 //
-//  Created by Tuna on 2021/02/24.
+//  Created by Tuna on 2021/02/27.
 //
 
 import UIKit
-import WebKit
 
-class RecentTableViewCell: UITableViewCell {
-    @IBOutlet weak var RwbImage: WKWebView!
-    @IBOutlet weak var RlbView: UILabel!
-    @IBOutlet weak var RlbTitle: UILabel!
-    @IBOutlet weak var RlbGenre: UILabel!
-    
+class ReviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnDelete: UIButton!
     
+    @IBOutlet weak var tfReview: UITextField!
+    @IBOutlet weak var txtUserNick: UILabel!
+    @IBOutlet weak var txtDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var adPage: UIPageControl!
     @IBOutlet weak var AdImageView: UIImageView!
     let timeSelector: Selector = #selector(MainViewController.updateTime)
     let interval = 2.0 // 시간 interval 1초
@@ -18,11 +19,53 @@ class MainViewController: UIViewController {
     var numImage = 0
     var imagName = ["ad8.png", "ad1.png", "ad4.png", "ad5.png", "ad2.png", "ad6.png","ad7.png"]
     
+    let numberofTouches = 2
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
         displayImage(number: numImage)
+        
+        //페이징
+        adPage.numberOfPages = imagName.count
+        adPage.currentPage = 0
+        adPage.pageIndicatorTintColor = UIColor.white
+        adPage.currentPageIndicatorTintColor  = UIColor.gray
+        AdImageView.image = UIImage(named: imagName[0])
+        // 한 손가락 Guesture
+                // 오른쪽
+                let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.responseToSwipeGesture(_ :)))
+                swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+                self.view.addGestureRecognizer(swipeRight)
+
+                // 왼쪽
+                let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.responseToSwipeGesture(_:)))
+                swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+                self.view.addGestureRecognizer(swipeLeft)
+    }
+    // 한 손가락 Guesture
+       @objc func responseToSwipeGesture(_ gesture: UISwipeGestureRecognizer){
+           if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+               // 발생한 이벤트가 각 방향의 스와이프 이벤트라면
+               // pageControl이 가르키는 현재 페이지에 해당하는 이미지를 imageView에 할당
+           switch swipeGesture.direction{
+               case UISwipeGestureRecognizer.Direction.right:
+               adPage.currentPage -= 1
+               AdImageView.image = UIImage(named: imagName[adPage.currentPage])
+           case UISwipeGestureRecognizer.Direction.left:
+               adPage.currentPage += 1
+               AdImageView.image = UIImage(named: imagName[adPage.currentPage])
+               default:
+                   break
+               }
+           }
+       }
+    
+    
+    @IBAction func imageControll(_ sender: UIPageControl) {
+        AdImageView.image = UIImage(named: imagName[adPage.currentPage])
     }
     
     @objc func updateTime(){
@@ -36,7 +79,6 @@ class MainViewController: UIViewController {
             count = 0
       }
         displayImage(number: count)
-        print(count)
     }
    
     

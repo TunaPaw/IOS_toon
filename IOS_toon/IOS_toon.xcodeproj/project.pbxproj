@@ -36,8 +36,18 @@
 		A50940DC25E64D61000D3A84 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940DB25E64D61000D3A84 /* BookTableViewController.swift */; };
 		A50940DF25E64DD3000D3A84 /* BookTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940DE25E64DD3000D3A84 /* BookTableModel.swift */; };
 		A50940E225E65112000D3A84 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940E125E65112000D3A84 /* BookTableViewCell.swift */; };
+		A5633EB525EA2DAC008FA514 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5633EB425EA2DAC008FA514 /* ReviewTableViewController.swift */; };
+		A5633EB825EA2DD1008FA514 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5633EB725EA2DD1008FA514 /* ReviewTableViewCell.swift */; };
+		A5633EBC25EA301E008FA514 /* ReviewTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5633EBB25EA301E008FA514 /* ReviewTableModel.swift */; };
+		A5633EC025EA31F5008FA514 /* ReviewDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5633EBF25EA31F5008FA514 /* ReviewDBModel.swift */; };
 		A5D1F0C425E7E1A900751EB0 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D1F0C325E7E1A900751EB0 /* back1.png */; };
 		A5D1F0CF25E7EA6900751EB0 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */; };
+		A5D1F0EB25E924F800751EB0 /* EpisodeDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F0EA25E924F800751EB0 /* EpisodeDBModel.swift */; };
+		A5D1F14625E95D4400751EB0 /* EpisodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F14525E95D4400751EB0 /* EpisodeTableViewController.swift */; };
+		A5D1F14925E95D5600751EB0 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F14825E95D5600751EB0 /* EpisodeTableViewCell.swift */; };
+		A5D1F14E25E95D7000751EB0 /* EpisodeTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F14D25E95D7000751EB0 /* EpisodeTableModel.swift */; };
+		A5D1F15225E96F5500751EB0 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F15125E96F5500751EB0 /* EpisodeViewController.swift */; };
+		A5D1F15925E97AA100751EB0 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1F15825E97AA100751EB0 /* EpisodeViewModel.swift */; };
 		A5E79CFF25DEA97000909E77 /* ad2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E79CFC25DEA97000909E77 /* ad2.png */; };
 		A5E79D0125DEA97000909E77 /* ad1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E79CFE25DEA97000909E77 /* ad1.png */; };
 		A5E79D0C25DEAC9C00909E77 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E79D0B25DEAC9B00909E77 /* MainViewController.swift */; };
@@ -84,8 +94,18 @@
 		A50940DB25E64D61000D3A84 /* BookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
 		A50940DE25E64DD3000D3A84 /* BookTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableModel.swift; sourceTree = "<group>"; };
 		A50940E125E65112000D3A84 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		A5633EB425EA2DAC008FA514 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		A5633EB725EA2DD1008FA514 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		A5633EBB25EA301E008FA514 /* ReviewTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableModel.swift; sourceTree = "<group>"; };
+		A5633EBF25EA31F5008FA514 /* ReviewDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDBModel.swift; sourceTree = "<group>"; };
 		A5D1F0C325E7E1A900751EB0 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
 		A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
+		A5D1F0EA25E924F800751EB0 /* EpisodeDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDBModel.swift; sourceTree = "<group>"; };
+		A5D1F14525E95D4400751EB0 /* EpisodeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewController.swift; sourceTree = "<group>"; };
+		A5D1F14825E95D5600751EB0 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		A5D1F14D25E95D7000751EB0 /* EpisodeTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableModel.swift; sourceTree = "<group>"; };
+		A5D1F15125E96F5500751EB0 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		A5D1F15825E97AA100751EB0 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		A5E79CFC25DEA97000909E77 /* ad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad2.png; sourceTree = "<group>"; };
 		A5E79CFE25DEA97000909E77 /* ad1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad1.png; sourceTree = "<group>"; };
 		A5E79D0B25DEAC9B00909E77 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				6FBE46C625DE597900971EFC /* IOS_toon */,
-				6FBE46C525DE597900971EFC /* Products */,
 				8539F31A67AB874814834D04 /* Pods */,
 				2CA67C290760EC5CE43F385D /* Frameworks */,
 			);
@@ -138,11 +157,13 @@
 				6FBE46C425DE597900971EFC /* IOS_toon.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6FBE46C625DE597900971EFC /* IOS_toon */ = {
 			isa = PBXGroup;
 			children = (
+				6FBE46C525DE597900971EFC /* Products */,
 				A5E79CF325DEA83800909E77 /* Image */,
 				6FBE46D225DE597B00971EFC /* LaunchScreen.storyboard */,
 				6FBE46C725DE597900971EFC /* AppDelegate.swift */,
@@ -152,9 +173,11 @@
 				6FBE46D525DE597B00971EFC /* Info.plist */,
 				6F3C5CCD25DE67B500692EF1 /* TableViewController.swift */,
 				6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */,
+				6FA415FE25E363310018B1A4 /* InsertModel.swift */,
 				6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */,
 				6F3C5CD325DE6F3000692EF1 /* FindViewController.swift */,
 				6FBE46CB25DE597900971EFC /* ViewController.swift */,
+				6F472D4F25E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift */,
 				A5E79D1425DECC9000909E77 /* SearchViewController.swift */,
 				A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */,
 				A5E79D1725DED32A00909E77 /* MyPageViewController.swift */,
@@ -169,13 +192,19 @@
 				A50940DE25E64DD3000D3A84 /* BookTableModel.swift */,
 				A50940E125E65112000D3A84 /* BookTableViewCell.swift */,
 				A50461DF25E7A2DA00ED1D0F /* ContentDetailViewController.swift */,
+				A5D1F14525E95D4400751EB0 /* EpisodeTableViewController.swift */,
+				A5D1F14825E95D5600751EB0 /* EpisodeTableViewCell.swift */,
+				A5D1F14D25E95D7000751EB0 /* EpisodeTableModel.swift */,
+				A5D1F15125E96F5500751EB0 /* EpisodeViewController.swift */,
+				A5D1F15825E97AA100751EB0 /* EpisodeViewModel.swift */,
+				A5633EB425EA2DAC008FA514 /* ReviewTableViewController.swift */,
+				A5633EB725EA2DD1008FA514 /* ReviewTableViewCell.swift */,
+				A5633EBB25EA301E008FA514 /* ReviewTableModel.swift */,
 				6F3C5CD025DE6A0500692EF1 /* Share.swift */,
 				6FA415FB25E360AE0018B1A4 /* DBModel.swift */,
+				A5633EBF25EA31F5008FA514 /* ReviewDBModel.swift */,
 				A50940B625E627AA000D3A84 /* ContentDBModel.swift */,
-
-				6FA415FE25E363310018B1A4 /* InsertModel.swift */,
-				6F472D4F25E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift */,
-
+				A5D1F0EA25E924F800751EB0 /* EpisodeDBModel.swift */,
 			);
 			path = IOS_toon;
 			sourceTree = "<group>";
@@ -340,7 +369,11 @@
 				A50940E225E65112000D3A84 /* BookTableViewCell.swift in Sources */,
 				A50940DF25E64DD3000D3A84 /* BookTableModel.swift in Sources */,
 				A50461E025E7A2DA00ED1D0F /* ContentDetailViewController.swift in Sources */,
+				A5633EB525EA2DAC008FA514 /* ReviewTableViewController.swift in Sources */,
 				A5E79D0C25DEAC9C00909E77 /* MainViewController.swift in Sources */,
+				A5D1F15225E96F5500751EB0 /* EpisodeViewController.swift in Sources */,
+				A5633EBC25EA301E008FA514 /* ReviewTableModel.swift in Sources */,
+				A5D1F15925E97AA100751EB0 /* EpisodeViewModel.swift in Sources */,
 				A5E79D1825DED32A00909E77 /* MyPageViewController.swift in Sources */,
 				6F3C5CD125DE6A0500692EF1 /* Share.swift in Sources */,
 				A5E79D1525DECC9000909E77 /* SearchViewController.swift in Sources */,
@@ -353,15 +386,21 @@
 				A50940D125E644A7000D3A84 /* RecentTableModel.swift in Sources */,
 				6FBE46CA25DE597900971EFC /* SceneDelegate.swift in Sources */,
 				6F3C5CCE25DE67B500692EF1 /* TableViewController.swift in Sources */,
+				A5D1F14925E95D5600751EB0 /* EpisodeTableViewCell.swift in Sources */,
 				A50940DC25E64D61000D3A84 /* BookTableViewController.swift in Sources */,
+				A5D1F14625E95D4400751EB0 /* EpisodeTableViewController.swift in Sources */,
 				A50940CE25E643FB000D3A84 /* RecentTableViewController.swift in Sources */,
 				6FA415F725DF6CB40018B1A4 /* JoinViewController.swift in Sources */,
 				A5D1F0CF25E7EA6900751EB0 /* SearchResultTableViewController.swift in Sources */,
 				6FA415FC25E360AE0018B1A4 /* DBModel.swift in Sources */,
 				A50940D425E64832000D3A84 /* RecentTableViewCell.swift in Sources */,
+				A5D1F0EB25E924F800751EB0 /* EpisodeDBModel.swift in Sources */,
+				A5D1F14E25E95D7000751EB0 /* EpisodeTableModel.swift in Sources */,
 				6FA415FF25E363310018B1A4 /* InsertModel.swift in Sources */,
+				A5633EB825EA2DD1008FA514 /* ReviewTableViewCell.swift in Sources */,
 				6F3C5CD425DE6F3000692EF1 /* FindViewController.swift in Sources */,
 				A5FF1BE425E5734B00D3C126 /* FavoriteTableViewController.swift in Sources */,
+				A5633EC025EA31F5008FA514 /* ReviewDBModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

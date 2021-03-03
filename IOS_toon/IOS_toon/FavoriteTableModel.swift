@@ -13,7 +13,7 @@ protocol FavoriteTableModelProtocol: class {
     
     class FavoriteTableModel: NSObject {
         var delegate: FavoriteTableModelProtocol!
-        let urlPath = "http://127.0.0.1:8080/iosproject/recentRead.jsp"
+        let urlPath = "http://127.0.0.1:8080/iosproject/favoriteRead.jsp"
         
         func downloadItems(){
             let url = URL(string: urlPath)!
@@ -73,7 +73,7 @@ protocol FavoriteTableModelProtocol: class {
         }
         DispatchQueue.main.async(execute: {() -> Void in
         self.delegate.itemDownloaded(items: locations)
-            print(locations)
+            
         })
     }
 }

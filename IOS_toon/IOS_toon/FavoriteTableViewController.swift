@@ -21,7 +21,7 @@ class FavoriteTableViewController: UITableViewController, FavoriteTableModelProt
         favoriteTableModel.delegate = self
         favoriteTableModel.downloadItems()
         
-        FavoriteTableView.rowHeight =  134
+        FavoriteTableView.rowHeight =  200
         
     }
     func itemDownloaded(items: NSArray) {
@@ -57,12 +57,69 @@ class FavoriteTableViewController: UITableViewController, FavoriteTableModelProt
         cell.lbGenre?.text = "장르 : \(item.cgenre!)"
         cell.lbTitle?.text = "제목 : \(item.ctitle!)"
         
-        print("\(item.ccover!)")
+
         
         
         return cell
     }
     
+    //스와이프
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let favoriteAction = UIContextualAction(style: .normal, title:  "즐겨찾기", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            let userAlert = UIAlertController(title: "즐겨찾기", message: "즐겨찾기 항목에 추가합니다.", preferredStyle: UIAlertController.Style.actionSheet)
+            let onAction = UIAlertAction(title: "네, 알겠습니다", style: UIAlertAction.Style.default, handler: nil)
+            userAlert.addAction(onAction)
+            self.present(userAlert, animated: true, completion: nil)
+            success(true)
+        })
+        favoriteAction.image = UIImage(named: "icons8-star-32")
+        favoriteAction.backgroundColor = UIColor.systemYellow
+        
+        let shareAction = UIContextualAction(style: .destructive, title:  "공유", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        shareAction.backgroundColor = UIColor.systemBlue
+        shareAction.image = UIImage(named: "icon1.png")
+
+        let cartAction = UIContextualAction(style: .destructive, title:  "장바구니", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        cartAction.backgroundColor = UIColor.systemPink
+        return UISwipeActionsConfiguration(actions:[ favoriteAction,shareAction,cartAction])
+        }
+    
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let oneAction = UIContextualAction(style: .normal, title:  "one", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        oneAction.backgroundColor = UIColor.systemOrange
+        let twoAction = UIContextualAction(style: .normal, title:  "two", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        twoAction.backgroundColor = UIColor.systemPurple
+
+            return UISwipeActionsConfiguration(actions:[twoAction,oneAction])
+
+
+
+        }
+
+
+
+
+
+
 
     /*
     // Override to support conditional editing of the table view.

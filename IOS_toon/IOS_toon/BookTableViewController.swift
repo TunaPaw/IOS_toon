@@ -59,13 +59,11 @@ class BookTableViewController: UITableViewController, BookTableModelProtocol {
         
         
         cell.BwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
-        cell.BlbCode?.text = "코드 : \(item.ccover!)"
         cell.BlbView?.text = "조회 : \(item.cview!)"
         cell.BlbGenre?.text = "장르 : \(item.cgenre!)"
         cell.BlbTitle?.text = "제목 : \(item.ctitle!)"
         
         //webview2.load(URLRequest(url: URL(fileURLWithPath: "https://www.youtube.com/watch?v=\(videoId)")))
-        print("\(item.ccover!)")
         return cell
     }
 
@@ -73,7 +71,50 @@ class BookTableViewController: UITableViewController, BookTableModelProtocol {
     @IBAction func btnGenre1(_ sender: UIButton) {
        reloadInputViews()
     }
-    
+    //스와이프
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let favoriteAction = UIContextualAction(style: .normal, title:  "즐겨찾기", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        favoriteAction.backgroundColor = UIColor.systemYellow
+        let shareAction = UIContextualAction(style: .normal, title:  "공유", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        shareAction.backgroundColor = UIColor.systemBlue
+        let cartAction = UIContextualAction(style: .normal, title:  "장바구니", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        cartAction.backgroundColor = UIColor.systemPink
+            return UISwipeActionsConfiguration(actions:[favoriteAction,shareAction,cartAction])
+        }
+
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let oneAction = UIContextualAction(style: .normal, title:  "one", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        oneAction.backgroundColor = UIColor.systemOrange
+        let twoAction = UIContextualAction(style: .normal, title:  "two", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        twoAction.backgroundColor = UIColor.systemPurple
+
+            return UISwipeActionsConfiguration(actions:[twoAction,oneAction])
+
+
+
+        }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

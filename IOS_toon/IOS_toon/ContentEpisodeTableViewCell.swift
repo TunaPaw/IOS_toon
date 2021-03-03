@@ -1,19 +1,13 @@
 //
-//  RecentTableViewCell.swift
+//  ContentEpisodeTableViewCell.swift
 //  IOS_toon
 //
-//  Created by Tuna on 2021/02/24.
+//  Created by Tuna on 2021/02/26.
 //
 
 import UIKit
-import WebKit
 
-class RecentTableViewCell: UITableViewCell {
-    @IBOutlet weak var RwbImage: WKWebView!
-    @IBOutlet weak var RlbView: UILabel!
-    @IBOutlet weak var RlbTitle: UILabel!
-    @IBOutlet weak var RlbGenre: UILabel!
-    
+class ContentEpisodeTableViewCell: UITableViewCell {
 
     
     override func awakeFromNib() {
@@ -21,6 +15,9 @@ class RecentTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBAction func btnCheck(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
