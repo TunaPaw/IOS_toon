@@ -31,6 +31,15 @@ class DBModel: NSObject{
         self.UPasswordCheck = UPasswordCheck
     }
 
+    init(UName: String, UTel: String, UPostcode:String, UAddr: String, UPassword: String) {
+        self.UName = UName
+        self.UTel = UTel
+        self.UPostcode = UPostcode
+        self.UAddr = UAddr
+        self.UPassword = UPassword
+    }
+    
+    
     init(count: String) {
         self.count = count
     }

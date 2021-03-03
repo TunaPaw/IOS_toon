@@ -14,6 +14,7 @@
 		6F472D4125E38A8F0069DAD1 /* EmailCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */; };
 		6F472D5025E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472D4F25E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift */; };
 		6F472D8325EF5C880069DAD1 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472D8225EF5C880069DAD1 /* LoginModel.swift */; };
+		6F472D8725EF70280069DAD1 /* myPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472D8625EF70280069DAD1 /* myPageModel.swift */; };
 		6FA415F725DF6CB40018B1A4 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */; };
 		6FA415FC25E360AE0018B1A4 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA415FB25E360AE0018B1A4 /* DBModel.swift */; };
 		6FA415FF25E363310018B1A4 /* InsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA415FE25E363310018B1A4 /* InsertModel.swift */; };
@@ -71,6 +72,7 @@
 		6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckModel.swift; sourceTree = "<group>"; };
 		6F472D4F25E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoZipCodeVCViewController.swift; sourceTree = "<group>"; };
 		6F472D8225EF5C880069DAD1 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		6F472D8625EF70280069DAD1 /* myPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageModel.swift; sourceTree = "<group>"; };
 		6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		6FA415FB25E360AE0018B1A4 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		6FA415FE25E363310018B1A4 /* InsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertModel.swift; sourceTree = "<group>"; };
@@ -179,10 +181,11 @@
 				6F472D4025E38A8F0069DAD1 /* EmailCheckModel.swift */,
 				6F472D8225EF5C880069DAD1 /* LoginModel.swift */,
 				6F3C5CD325DE6F3000692EF1 /* FindViewController.swift */,
+				A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */,
 				6FBE46CB25DE597900971EFC /* ViewController.swift */,
 				6F472D4F25E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift */,
 				A5E79D1425DECC9000909E77 /* SearchViewController.swift */,
-				A5D1F0CE25E7EA6900751EB0 /* SearchResultTableViewController.swift */,
+				6F472D8625EF70280069DAD1 /* myPageModel.swift */,
 				A5E79D1725DED32A00909E77 /* MyPageViewController.swift */,
 				A5E79D0B25DEAC9B00909E77 /* MainViewController.swift */,
 				A5FF1BE325E5734B00D3C126 /* FavoriteTableViewController.swift */,
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F472D8725EF70280069DAD1 /* myPageModel.swift in Sources */,
 				A50940B325E597A7000D3A84 /* FavoriteTableModel.swift in Sources */,
 				A50940E225E65112000D3A84 /* BookTableViewCell.swift in Sources */,
 				A50940DF25E64DD3000D3A84 /* BookTableModel.swift in Sources */,
