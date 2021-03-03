@@ -13,7 +13,7 @@ class RecentTableViewCell: UITableViewCell {
     @IBOutlet weak var RlbView: UILabel!
     @IBOutlet weak var RlbTitle: UILabel!
     @IBOutlet weak var RlbGenre: UILabel!
-    @IBOutlet weak var RlbCover: UILabel!
+    
 
     
     override func awakeFromNib() {

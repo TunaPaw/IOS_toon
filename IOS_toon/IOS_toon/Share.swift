@@ -9,6 +9,4 @@ import Foundation
 
 struct Share{
     static var userID: String = ""
-
-    static var Addr: String = ""
 }

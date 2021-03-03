@@ -77,7 +77,6 @@ class RecentTableModel {
     }
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.itemDownloaded(items: locations)
-            print("테이블 모델 파싱: \(locations)")
         })
     }
 }

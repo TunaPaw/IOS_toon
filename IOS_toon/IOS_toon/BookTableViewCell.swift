@@ -11,7 +11,6 @@ import WebKit
 class BookTableViewCell: UITableViewCell {
     
     @IBOutlet weak var BwbImage: WKWebView!
-    @IBOutlet weak var BlbCode: UILabel!
     @IBOutlet weak var BlbView: UILabel!
     @IBOutlet weak var BlbTitle: UILabel!
     @IBOutlet weak var BlbGenre: UILabel!
