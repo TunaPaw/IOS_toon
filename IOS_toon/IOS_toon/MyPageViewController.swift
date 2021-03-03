@@ -7,14 +7,47 @@
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController, myPageModelProtocol{
+    
+    var dsAddr = ""
+    var dsName = ""
+    var dsPassword = ""
+    var dsPostcode = ""
+    var dsTel = ""
+    
+    
+    
+    @IBOutlet weak var myAddr: UITextField!
+    @IBOutlet weak var myPostcode: UITextField!
+    @IBOutlet weak var myTel: UITextField!
+    @IBOutlet weak var myPassword: UITextField!
+    @IBOutlet weak var myName: UITextField!
+    var feedItem: NSArray = NSArray()
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+    }
+    
 
 
+    @IBOutlet weak var myEmail: UITextField!
     @IBOutlet weak var btnWithdrawal: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myEmail.text = Share.userID
         secondAnimation()
+        let mypageModel = myPageModel()
+        mypageModel.delegate = self
+        
+        mypageModel.checkItems(UserId: myEmail.text!)
+        
+        
+        myPassword.text = dsPassword
+        myName.text = dsName
+        myPostcode.text = dsPostcode
+        myAddr.text = dsAddr
+        myTel.text = dsTel
+        
         // Do any additional setup after loading the view.
     }
     
@@ -41,5 +74,19 @@ class MyPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    func receiveItems(UPassword: String!, UName: String!, UTel: String!, UPostcode: String!, UAddr: String!){
+        dsName = UName!
+        dsPassword = UPassword!
+        dsPostcode = UPostcode!
+        dsTel = UTel!
+        dsAddr = UAddr!
+        
+    }
+    
+    // 키보드 숨기기
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
 
 }
