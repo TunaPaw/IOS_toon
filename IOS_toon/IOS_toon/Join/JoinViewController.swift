@@ -121,15 +121,9 @@ class JoinViewController: UIViewController, JspModelProtocol, UIWebViewDelegate 
                 displayAlertMessage(userMessage: "비밀번호가 일치하지 않습니다.");
                 txtJoinPassword.text = ""
                 txtJoinPasswordCheck.text = ""
-            }
-            
-
-            
-            if !isVailedPassword(password: UPassword) {
+            } else if !isVailedPassword(password: UPassword) {
                 displayAlertMessage(userMessage: "비밀번호는 영문과 숫자를 포함한 8자 이상이어야합니다.");
-            }
-            
-            if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == "" || UTel == "" || lblEmailCheck.text == nil){
+            }else if(UEmail=="" || UPassword=="" || UPasswordCheck=="" || UPostcode == "" || UAddr == "" || UName == "" || UTel == "" || lblEmailCheck.text == nil){
             displayAlertMessage(userMessage: "빈칸과 이메일 중복체크를 확인해주세요");
             return;
             }else{
