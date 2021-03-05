@@ -14,13 +14,13 @@ class KakaoZipCodeVCViewController: UIViewController {
         configureUI()
     }
 // MARK: - UI
-    private func configureUI() {
+    func configureUI() {
         view.backgroundColor = .white
         setAttributes()
         setContraints()
     }
 
-    private func setAttributes() {
+    func setAttributes() {
         let contentController = WKUserContentController()
         contentController.add(self, name: "callBackHandler")
 
