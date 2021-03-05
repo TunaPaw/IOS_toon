@@ -58,24 +58,8 @@ class ViewController: UIViewController, LoginModelProtocol {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "myPageSegue"{
-//            let myPageView = segue.destination as! MyPageViewController
-//
-//            // let item: Students = studentsList[(indexPath! as NSIndexPath).row]
-//            let item: DBModel = feedItem as! DBModel // NSIndexPath 생략가능
-//
-//            let UPassword = item.UPassword
-//            let UName = item.UName
-//            let UTel = item.UTel
-//            let UPostcode = item.UPostcode
-//            let UAddr = item.UAddr
-//
-//            myPageView.receiveItems(UPassword:UPassword, UName: UName, UTel: UTel, UPostcode: UPostcode, UAddr:UAddr)
-//        }
- //   }
     
+
     
 }//-------------------------
 

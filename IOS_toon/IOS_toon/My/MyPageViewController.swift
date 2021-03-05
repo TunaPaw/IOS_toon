@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class MyPageViewController: UIViewController, myPageModelProtocol{
     
     var dsAddr = ""
@@ -22,24 +24,11 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var myTel: UITextField!
     @IBOutlet weak var myPassword: UITextField!
     @IBOutlet weak var myName: UITextField!
-    var feedItem: NSArray = NSArray()
     
+    var name: NSString = ""
+    var feedItem: NSArray = []
     func itemDownloaded(items: NSArray) {
-        feedItem = items
-        print("아이템 다운로드 \(feedItem)")
-        
-//        for i in 0..<feedItem.count{
-//        let item : DBModel = feedItem[i] as! DBModel
-//            dsPassword = item.cpass
-//        }
-        dsPassword = feedItem[0]as? String ?? "null"
-        
-        myPassword.text = dsPassword
-        myName.text = dsName
-        myPostcode.text = dsPostcode
-        myAddr.text = dsAddr
-        myTel.text = dsTel
-        print("이름\(dsName)")
+        name = items[0].self as! NSString
         
     }
     
@@ -49,26 +38,29 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var btnWithdrawal: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        print(name)
         myEmail.text = Share.userID
+        myEmail.isUserInteractionEnabled = false
         secondAnimation()
         
         let mypageModel = myPageModel()
         mypageModel.delegate = self
-        mypageModel.downloadItems()
+        mypageModel.checkItems(UserId: myEmail.text!)
         
-      //  mypageModel.checkItems(UserId: myEmail.text!)
+
+        let query = DBModel()
+        myAddr.text = query.UAddr
         
-        
-        
-        // Do any additional setup after loading the view.
+        myName.text = dsName
+        myPostcode.text = dsPostcode
+        myTel.text = dsTel
+        print("receiveItem\(dsName)")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {//애니메이션
     super.viewWillAppear(animated)
-        let mypageModel = myPageModel()
-        mypageModel.delegate = self
-        mypageModel.downloadItems()
   //  SearchBar.center.y -= view.bounds.height //위에 숨겨져 있음
     btnWithdrawal.center.y += view.bounds.height //아래에 숨겨져있음
   // hiddenLabel.alpha = 0.0 // 알파0
@@ -80,12 +72,7 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     self.btnWithdrawal.center.y -= self.view.bounds.height
     }, completion:nil)
     }
-    
-//    func itemDownloaded(items: NSArray){
-//        feedItem = items
-//        self.MyPageViewController.reloadData()
-//    }
-//
+
     /*
     // MARK: - Navigation
 
@@ -96,18 +83,21 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     }
     */
 
-//    func receiveItems(UPassword: String!, UName: String!, UTel: String!, UPostcode: String!, UAddr: String!){
-//        dsName = UName!
-//        dsPassword = UPassword!
-//        dsPostcode = UPostcode!
-//        dsTel = UTel!
-//        dsAddr = UAddr!
-//
-//    }
+    func myreceiveItems(_ UPassword: String,_ UName: String, _ UTel: String, _ UPostcode: String, _ UAddr: String){
+        dsName = UName
+        dsPassword = UPassword
+        dsPostcode = UPostcode
+        dsTel = UTel
+        dsAddr = UAddr
+        print("receiveItems dsName:\(dsName)")
+    }
     
     // 키보드 숨기기
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
-//---------------------------------------------------------
+    
+ 
+        
+    
 }

@@ -62,14 +62,18 @@ extension KakaoZipCodeVCViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if let data = message.body as? [String: Any] {
             address = data["roadAddress"] as? String ?? ""
-            print("유저컨텐트컨트롤\(address)")
+            guard let previousVC = presentingViewController as? JoinViewController else { return }
+            previousVC.txtJoinAddr.text = address
+            navigationController?.popViewController(animated: true)
+            print(address)
+            
+            
         }
-        guard let previousVC = presentingViewController as? JoinViewController else { return }
-        previousVC.txtJoinAddr.text = address
-        self.dismiss(animated: true, completion: nil)
-        print(address)
-        dismiss(animated: true, completion: nil)
-        
+//        guard let previousVC = presentingViewController as? JoinViewController else { return }
+//        previousVC.txtJoinAddr.text = address
+//        self.dismiss(animated: true, completion: nil)
+//        print("두번째\(address)")
+//        }
     }
 }
 
@@ -81,7 +85,4 @@ extension KakaoZipCodeVCViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         indicator.stopAnimating()
     }
-    
-    
-    
 }
