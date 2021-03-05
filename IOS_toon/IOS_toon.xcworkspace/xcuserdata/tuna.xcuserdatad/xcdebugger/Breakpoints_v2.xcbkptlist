@@ -66,113 +66,6 @@
             endingLineNumber = "12"
             landmarkName = "MainNewCollectionViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - 829bcf3075fb20c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.__deallocating_deinit"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - c7f082a0efa3c023"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.__allocating_init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; IOS_toon.MainNewCollectionViewController"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - 8f1addbeaf9b259c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; IOS_toon.MainNewCollectionViewController"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "119">
-               </Location>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - 66834b4a66ca3e60"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IOS_toon.MainNewCollectionViewController"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - 16805aa7d808afa5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IOS_toon.MainNewCollectionViewController"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "386">
-               </Location>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - 6bcf206d0965fbb3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IOS_toon.MainNewCollectionViewController&gt;"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "B9028C73-7A4D-4E85-A796-C00E2D5FBE2D - b28d1dd58fd1a31c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IOS_toon.MainNewCollectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IOS_toon.MainNewCollectionViewController&gt;"
-                  moduleName = "IOS_toon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuna/academic/swift/Share/IOS_toon/IOS_toon/MainNewCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "239">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -189,6 +82,54 @@
             endingLineNumber = "9"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82FB105B-40C4-4424-AF7C-D8068E6C971D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_toon/RecentTableModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "parseJONS(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3992AEBF-652F-4843-A0C6-CC018418610C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_toon/MyPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "MyPageViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2826BC8F-7335-4EE4-9452-5F053366232A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_toon/TabBar/TabBarGenre/BookTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

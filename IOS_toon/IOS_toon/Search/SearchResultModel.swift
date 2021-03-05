@@ -1,25 +1,29 @@
 //
-//  BookTableModel.swift
+//  SearchResultModel.swift
 //  IOS_toon
 //
-//  Created by Tuna on 2021/02/24.
+//  Created by Tuna on 2021/03/05.
 //
 
 import Foundation
 
-protocol  BookTableModelProtocol: class {
+protocol SearchResultModelProtocol: class {
     func itemDownloaded(items: NSArray)
 }
 
-class BookTableModel {
-    var delegate: BookTableModelProtocol!
+class SearchResultModel {
+    var recieveSearch: String = ""
+    var delegate: SearchResultModelProtocol!
     
-    let urlPath = "http://127.0.0.1:8080/iosproject/recentRead.jsp"
+    
     func downloadItems(){
+        let urlPath = "http://127.0.0.1:8080/iosproject/SearchList.jsp?now=\(recieveSearch)"
         let url = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        print("인영씨 여기봐봥요\(recieveSearch)")
         
-        let task = defaultSession.dataTask(with: url){(data, reponse, error)in
+        
+        let task = defaultSession.dataTask(with: url){(data, response, error)in
             if error != nil{
                 print("failed to download data")
             }else{
@@ -30,11 +34,11 @@ class BookTableModel {
         task.resume()
     }
     
-    func parseJONS(_ data:Data){
-        var jasonResult = NSArray()
+    func parseJONS(_ data: Data) {
+        var jsonResult = NSArray()
         
         do{
-            jasonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+            jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
         }catch let error as NSError{
             print(error)
         }
@@ -42,8 +46,8 @@ class BookTableModel {
         var jsonElement = NSDictionary()
         let locations = NSMutableArray()
         
-        for i in 0..<jasonResult.count{
-            jsonElement = jasonResult[i] as! NSDictionary
+        for i in 0..<jsonResult.count{
+            jsonElement = jsonResult[i] as! NSDictionary
             let query = ContentDBModel()
             
             if let ccode = jsonElement["code"] as? String,
@@ -70,8 +74,10 @@ class BookTableModel {
         }
             locations.add(query)
     }
-        DispatchQueue.main.async(execute: {() ->Void in
+        DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.itemDownloaded(items: locations)
         })
     }
+    
+ 
 }

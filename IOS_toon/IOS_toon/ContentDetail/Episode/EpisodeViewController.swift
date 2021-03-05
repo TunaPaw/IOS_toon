@@ -10,17 +10,13 @@ import WebKit
 
 
 class EpisodeViewController: UIViewController, EpisodeViewModelProtocol {
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-    }
     
-    var receiveepicon: String = ""
 
-    
+    var receiveepicon: String = ""
 
     @IBOutlet weak var wbEpi: WKWebView!
   
-    var feedItem: NSArray = NSArray()
+    var feedItem: String = String()
       
     
     override func viewDidLoad() {
@@ -30,13 +26,23 @@ class EpisodeViewController: UIViewController, EpisodeViewModelProtocol {
         episodeViewModel.delegate = self
         episodeViewModel.downloadItems()
         
-        wbEpi?.load(URLRequest(url: URL(string: "\(receiveepicon)")!))
+
+        
+//        print("뷰url\(feedItem)")
+      //  wbEpi?.load(URLRequest(url: URL(string: "\(feedItem)")!))
+        wbEpi.load(URLRequest(url: URL(string: "http://batoon3.net/bbs/board.php?bo_table=toons&table=toons&wr_id=174036&is=8147&cid=")!))
+        
   
     
     }
+    func itemDownloaded(items: String) {
+        feedItem = items
+        print("aaaaaaa\(feedItem)")
+        
+    }
     
     func receiveItem(_ epicon: String){
-        receiveepicon = epicon
+      //  receiveepicon = epicon
     }
     
 

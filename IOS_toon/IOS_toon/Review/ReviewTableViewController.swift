@@ -1,52 +1,40 @@
 //
-//  EpisodeTableViewController.swift
+//  ReviewTableViewController.swift
 //  IOS_toon
 //
 //  Created by Tuna on 2021/02/27.
 //
 
 import UIKit
-import WebKit
+import  WebKit
 
-class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtocol {
+class ReviewTableViewController: UITableViewController, ReviewTableModelProtocol{
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+        self.ReviewTableView.reloadData()
+    }
     
+    var receivecover = ""
 
-    @IBOutlet var EpisodeTableView: UITableView!
+    @IBOutlet var ReviewTableView: UITableView!
     @IBOutlet weak var wbCover: WKWebView!
     
     var feedItem: NSArray = NSArray()
-    var receivecode: String = ""
-    var receiveTotalepi: String = ""
-    var receiveEpicon: String = ""
-    var receoveCover: String = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let reviewModel = ReviewTableModel()
+        reviewModel.delegate = self
+        reviewModel.downloadItems()
+        
+        wbCover.load(URLRequest(url: URL(string: "\(receivecover)")!))
+        ReviewTableView.rowHeight = 130
+        
+        print(Share.nowContentCode)
 
-       let episodeTableModel = EpisodeTableModel()
-        episodeTableModel.delegate = self
-        episodeTableModel.downloadItems()
-        
-        EpisodeTableView.rowHeight = 60
-        
-        wbCover.load(URLRequest(url: URL(string: "\(receoveCover)")!))
-        
-    }
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-        self.EpisodeTableView.reloadData()
-    }
-    override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
-        let queryModel = EpisodeTableModel()
-        queryModel.delegate = self
-        queryModel.downloadItems()
     }
 
-
-    @IBAction func btnCheck(_ sender: UIButton) {
-        sender.isSelected.toggle()
-    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,31 +49,23 @@ class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtoc
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as! EpisodeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath)as! ReviewTableViewCell
 
         // Configure the cell...
-        let item: EpisodeDBModel = feedItem[indexPath.row] as! EpisodeDBModel
-
-        cell.lbEpi?.text = "\(item.Ecode!)화"
-        receiveEpicon = item.EContentImage1!
+    let item: ReviewDBModel = feedItem[indexPath.row] as! ReviewDBModel
         
+        cell.tfReview.text = "\(item.Rcontent!)"
+        cell.txtUserNick.text = "\(item.Uemail!)"
+        cell.txtDate.text = "\(item.RInsertDate!) 에 작성"
         return cell
     }
-    func receiveItem(_ code: String, _ epi: String, _ cover: String){
-        receivecode = code
-        receiveTotalepi = epi
-        receoveCover = cover
+    
+    
+    
+    func receiveItem(_ cover: String){
+        receivecover = cover
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sgEpicon"{
-            let detailView = segue.destination as! EpisodeViewController
-            let epicon = receiveEpicon
 
-            detailView.receiveItem(epicon)
-        }
-    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

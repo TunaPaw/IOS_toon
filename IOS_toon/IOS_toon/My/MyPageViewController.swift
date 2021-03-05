@@ -23,8 +23,24 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var myPassword: UITextField!
     @IBOutlet weak var myName: UITextField!
     var feedItem: NSArray = NSArray()
+    
     func itemDownloaded(items: NSArray) {
         feedItem = items
+        print("아이템 다운로드 \(feedItem)")
+        
+//        for i in 0..<feedItem.count{
+//        let item : DBModel = feedItem[i] as! DBModel
+//            dsPassword = item.cpass
+//        }
+        dsPassword = feedItem[0]as? String ?? "null"
+        
+        myPassword.text = dsPassword
+        myName.text = dsName
+        myPostcode.text = dsPostcode
+        myAddr.text = dsAddr
+        myTel.text = dsTel
+        print("이름\(dsName)")
+        
     }
     
 
@@ -36,23 +52,23 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
         
         myEmail.text = Share.userID
         secondAnimation()
+        
         let mypageModel = myPageModel()
         mypageModel.delegate = self
+        mypageModel.downloadItems()
         
-        mypageModel.checkItems(UserId: myEmail.text!)
+      //  mypageModel.checkItems(UserId: myEmail.text!)
         
         
-        myPassword.text = dsPassword
-        myName.text = dsName
-        myPostcode.text = dsPostcode
-        myAddr.text = dsAddr
-        myTel.text = dsTel
         
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {//애니메이션
     super.viewWillAppear(animated)
+        let mypageModel = myPageModel()
+        mypageModel.delegate = self
+        mypageModel.downloadItems()
   //  SearchBar.center.y -= view.bounds.height //위에 숨겨져 있음
     btnWithdrawal.center.y += view.bounds.height //아래에 숨겨져있음
   // hiddenLabel.alpha = 0.0 // 알파0
@@ -64,7 +80,12 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     self.btnWithdrawal.center.y -= self.view.bounds.height
     }, completion:nil)
     }
-
+    
+//    func itemDownloaded(items: NSArray){
+//        feedItem = items
+//        self.MyPageViewController.reloadData()
+//    }
+//
     /*
     // MARK: - Navigation
 
@@ -75,18 +96,18 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     }
     */
 
-    func receiveItems(UPassword: String!, UName: String!, UTel: String!, UPostcode: String!, UAddr: String!){
-        dsName = UName!
-        dsPassword = UPassword!
-        dsPostcode = UPostcode!
-        dsTel = UTel!
-        dsAddr = UAddr!
-        
-    }
+//    func receiveItems(UPassword: String!, UName: String!, UTel: String!, UPostcode: String!, UAddr: String!){
+//        dsName = UName!
+//        dsPassword = UPassword!
+//        dsPostcode = UPostcode!
+//        dsTel = UTel!
+//        dsAddr = UAddr!
+//
+//    }
     
     // 키보드 숨기기
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
-
+//---------------------------------------------------------
 }

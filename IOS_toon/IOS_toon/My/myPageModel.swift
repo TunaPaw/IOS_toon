@@ -13,21 +13,36 @@ protocol myPageModelProtocol: class {
 
 class myPageModel{
     var delegate: myPageModelProtocol!
-    var urlPath = "http://127.0.0.1:8080/iosproject/user_query_ios.jsp"
+    var urlPath = "http://127.0.0.1:8080/iosproject/user_query_ios.jsp?now=\(Share.userID)"
     
-    func checkItems(UserId: String){
-    let urlAdd = "?UEmail=\(UserId)"
-    urlPath = urlPath + urlAdd
-        print("urlpath\(urlPath)")
-        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+//    func checkItems(UserId: String){
+//    let urlAdd = "?UEmail=\(UserId)"
+//    urlPath = urlPath + urlAdd
+//        print("urlpath\(urlPath)")
+//        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+//        let url = URL(string: urlPath)!
+//        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+//
+//        let task = defaultSession.dataTask(with: url){(data, response, error)in
+//            if error != nil{
+//                print("failed to download data")
+//            }else{
+//                print("userinfo is downloading")
+//                self.parseJONS(data!)
+//            }
+//        }
+//        task.resume()
+//    }
+    func downloadItems(){
         let url = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
-        let task = defaultSession.dataTask(with: url){(data, response, error)in
+        let task = defaultSession.dataTask(with: url){[self](data, response, error)in
             if error != nil{
                 print("failed to download data")
             }else{
-                print("userinfo is downloading")
+                print("Data is downloading")
+                print("\(urlPath)")
                 self.parseJONS(data!)
             }
         }
@@ -52,11 +67,12 @@ class myPageModel{
             jsonElement =  jsonResult[i] as! NSDictionary
             let query = DBModel()
             
-            if let UPassword = jsonElement["UPassword"] as? String,
-               let UName = jsonElement["UName"] as? String,
-               let UTel = jsonElement["UTel"] as? String,
-               let UPostcode = jsonElement["UPostcode"] as? String,
-               let UAddr = jsonElement["UAddr"] as? String{
+            if let UPassword = jsonElement["upassword"] as? String,
+               let UName = jsonElement["uname"] as? String,
+               let UTel = jsonElement["utel"] as? String,
+               let UPostcode = jsonElement["upostcode"] as? String,
+               let UAddr = jsonElement["uaddr"] as? String{
+                
                 query.UPassword = UPassword
                 query.UName = UName
                 query.UTel = UTel

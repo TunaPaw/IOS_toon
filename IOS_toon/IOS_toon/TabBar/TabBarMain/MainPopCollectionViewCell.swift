@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import WebKit
 
 class MainPopCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var wbCover: WKWebView!
+    @IBOutlet weak var lbTitle: UILabel!
 }

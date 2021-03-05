@@ -13,11 +13,12 @@ protocol  ReviewTableModelProtocol: class {
     
 class ReviewTableModel {
     var delegate: ReviewTableModelProtocol!
-    let urlPath = "http://127.0.0.1:8080/iosproject/ReviewRead.jsp"
+    let urlPath = "http://127.0.0.1:8080/iosproject/ReviewRead.jsp?now=\(Share.nowContentCode)"
     
     func downloadItems(){
         let url = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        print(urlPath)
         
         let task = defaultSession.dataTask(with: url){(data, response, error)in
             if error != nil{
