@@ -48,7 +48,7 @@ class MainViewController: UIViewController{
 //        self.NewCollection.dataSource = self
         
         
-       // NewCollection.dataSource = self
+        //NewCollection.dataSource = self
         PopCollection.dataSource = self
         
         NewCollection.reloadData()
