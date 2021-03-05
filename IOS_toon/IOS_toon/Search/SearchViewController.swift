@@ -13,6 +13,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var SearchView: UIView!
     @IBOutlet weak var SearchBar: UISearchBar!
     
+    var Stsearch : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +52,7 @@ class SearchViewController: UIViewController {
         }, completion:nil)
     }
     @IBAction func btnSearch(_ sender: UIButton) {
+        Stsearch = SearchBar.text!
     }
     
 
@@ -63,4 +66,18 @@ class SearchViewController: UIViewController {
     }
     */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgSearch"{
+            let detailView = segue.destination as! SearchResultTableViewController
+  
+            let search = Stsearch
+            Share.search = search
+            detailView.receiveItems(search)
+         
+        }
+            
+        
+    }
+    
+    
 }

@@ -52,4 +52,10 @@ class ContentDBModel: NSObject {
         self.cdelete = cdelete
         self.csubtitle = csubtitle
         }
+    
+    init(ccover: String, ctitle: String){
+        self.ccover = ccover
+        self.ctitle = ctitle
+    }
+    
 }

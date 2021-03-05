@@ -68,9 +68,7 @@ class BookTableViewController: UITableViewController, BookTableModelProtocol {
     }
 
     
-    @IBAction func btnGenre1(_ sender: UIButton) {
-       reloadInputViews()
-    }
+
     //스와이프
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 

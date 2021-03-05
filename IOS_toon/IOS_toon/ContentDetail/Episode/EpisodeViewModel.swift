@@ -1,5 +1,5 @@
 //
-//  EpisodeTableModel.swift
+//  EpisodeViewModel.swift
 //  IOS_toon
 //
 //  Created by Tuna on 2021/02/27.
@@ -7,18 +7,27 @@
 
 import Foundation
 
-protocol EpisodeTableModelProtocol: class {
-    func itemDownloaded(items: NSArray)
+protocol EpisodeViewModelProtocol: class {
+    func itemDownloaded(items: String)
 }
 
-class EpisodeTableModel{
-    var delegate: EpisodeTableModelProtocol!
-    let urlPath = "http://127.0.0.1:8080/iosproject/episodeRead.jsp"
 
+class EpisodeViewModel{
+    
+    var ccode: String = Share.nowContentCode
+    var ecode: String = Share.nowEcode
+    
+    var delegate: EpisodeViewModelProtocol!
+    var urlPath = "http://127.0.0.1:8080/iosproject/episodeViewRead.jsp?ccode=\(Share.nowContentCode)&ecode=\(Share.nowEcode)"
+    
     func downloadItems(){
-        let url = URL(string: urlPath)!
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
+        print("다운로드\(Share.nowContentCode),\(Share.nowEcode)")
+        print("다운로드\(urlPath)")
+        
+        let url = URL(string: urlPath)!
+        
+        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error)in
             if error != nil{
                 print("failed to download data")
@@ -29,6 +38,7 @@ class EpisodeTableModel{
         }
         task.resume()
     }
+    
     
     func parseJONS(_ data: Data){
         var jasonResult = NSArray()
@@ -41,27 +51,24 @@ class EpisodeTableModel{
         
         var jsonElement = NSDictionary()
         let locations = NSMutableArray()
+        var contentImage: String = ""
         
         for i in 0..<jasonResult.count{
             jsonElement = jasonResult[i] as! NSDictionary
-            let query = EpisodeDBModel()
             
-            if let ecode = jsonElement["ecode"] as? String,
-               let ccode = jsonElement["ccode"] as? String,
-               let contentImage1 = jsonElement["contentImage1"] as? String,
-               let contentImage2 = jsonElement["contentImage2"] as? String,
-               let contentImage3 = jsonElement["contentImage3"] as? String{
-                query.Ecode = ecode
-                query.Ccode = ccode
-                query.EContentImage1 = contentImage1
-                query.EContentImage2 = contentImage2
-                query.EContentImage3 = contentImage3
+            if let contentImage1 = jsonElement["contentImage1"] as? String{
+               
+                locations.add(contentImage1)
+                contentImage = locations[0] as! String
+                
+                
             }
-            locations.add(query)
+           
         }
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.itemDownloaded(items: locations)
+            self.delegate.itemDownloaded(items: contentImage)
         })
     }
+ 
     
 }

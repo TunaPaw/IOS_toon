@@ -113,7 +113,9 @@ class ContentDetailViewController: UIViewController {
         if segue.identifier == "sgReview"{
             let detailView = segue.destination as! ReviewTableViewController
             let cover = receivecover
-//
+            
+            Share.nowContentCode = receivecode
+            
             detailView.receiveItem(cover)
         }
         if segue.identifier == "sgEpisode"{
@@ -121,6 +123,9 @@ class ContentDetailViewController: UIViewController {
             let cover = receivecover
             let code = receivecode
             let epi = receiveepisode
+            
+            //Share.nowContentCode = ""
+            Share.nowContentCode = receivecode
             
             detailView.receiveItem(code, epi, cover)
             

@@ -14,6 +14,7 @@ protocol LoginModelProtocol: class {
 class LoginModel{
     var delegate: LoginModelProtocol!
     var urlPath = "http://127.0.0.1:8080/iosproject/loginCheck.jsp"
+    
     func checkItems(UserId: String, UserPw: String){
     let urlAdd = "?UEmail=\(UserId)&UPassword=\(UserPw)"
     urlPath = urlPath + urlAdd

@@ -1,41 +1,47 @@
 //
-//  ReviewTableViewController.swift
+//  SearchResultTableViewController.swift
 //  IOS_toon
 //
-//  Created by Tuna on 2021/02/27.
+//  Created by Tuna on 2021/03/05.
 //
 
 import UIKit
-import  WebKit
 
-class ReviewTableViewController: UITableViewController, ReviewTableModelProtocol{
+class SearchResultTableViewController: UITableViewController,SearchResultModelProtocol {
+    
     func itemDownloaded(items: NSArray) {
         feedItem = items
-        self.ReviewTableView.reloadData()
+        self.SearchTable.reloadData()
     }
     
-    var receivecover = ""
-
-    @IBOutlet var ReviewTableView: UITableView!
-    @IBOutlet weak var wbCover: WKWebView!
     
+    @IBOutlet var SearchTable: UITableView!
     var feedItem: NSArray = NSArray()
+    var imageurl: String = ""
+    var receiveSearch: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let reviewModel = ReviewTableModel()
-        reviewModel.delegate = self
-        reviewModel.downloadItems()
-        
-        wbCover.load(URLRequest(url: URL(string: "\(receivecover)")!))
-    
-        ReviewTableView.rowHeight = 130
-        
+        let searchModel  = SearchResultModel()
+        searchModel.delegate = self
+        searchModel.downloadItems()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
+    override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
+        let queryModel = SearchResultModel()
+        queryModel.delegate = self
+        queryModel.downloadItems()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -46,24 +52,27 @@ class ReviewTableViewController: UITableViewController, ReviewTableModelProtocol
         return feedItem.count
     }
 
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath)as! ReviewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! searchResultTableViewCell
 
         // Configure the cell...
-    let item: ReviewDBModel = feedItem[indexPath.row] as! ReviewDBModel
+        let item: ContentDBModel = feedItem[indexPath.row] as! ContentDBModel
         
-        cell.tfReview.text = "\(item.Rcontent!)"
-        cell.txtUserNick.text = "\(item.Uemail!)"
-        cell.txtDate.text = "\(item.RInsertDate!) 에 작성"
+        imageurl = "\(item.ccover!)"
+        
+        
+        cell.wv?.load(URLRequest(url: URL(string: "\(imageurl)")!))
+        cell.lbGenre?.text = "장르 : \(item.cgenre!)"
+        cell.lbTitle?.text = "제목 : \(item.ctitle!)"
+        
         return cell
     }
     
-    
-    
-    func receiveItem(_ cover: String){
-        receivecover = cover
+    func receiveItems(_ search: String){
+        receiveSearch = search
     }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -109,5 +118,6 @@ class ReviewTableViewController: UITableViewController, ReviewTableModelProtocol
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

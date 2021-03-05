@@ -7,20 +7,32 @@
 
 import UIKit
 
-
 class MainViewController: UIViewController{
-
- 
+    
+    var feedItem1: NSArray = NSArray()
+    var feedItem2: NSArray = NSArray()
     
 
+    
+    var imgurl2: String = ""
+    
+    @IBOutlet weak var NewCollection: UICollectionView!
+    @IBOutlet weak var PopCollection: UICollectionView!
+    
     @IBOutlet weak var adPage: UIPageControl!
     @IBOutlet weak var AdImageView: UIImageView!
+    
+    
     let timeSelector: Selector = #selector(MainViewController.updateTime)
     let interval = 2.0 // 시간 interval 1초
     var count = 0
     
     var numImage = 0
     var imagName = ["ad8.png", "ad1.png", "ad4.png", "ad5.png", "ad2.png", "ad6.png","ad7.png"]
+    
+    
+    var list = ["1", "2", "3", "4" ,"5", "6", "7", "8", "9", "10","1", "2", "3", "4" ,"5", "6", "7", "8", "9", "10"]
+    
     
     let numberofTouches = 2
     
@@ -30,8 +42,20 @@ class MainViewController: UIViewController{
         // Do any additional setup after loading the view.
         Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
         displayImage(number: numImage)
+    
         
-        //페이징
+//        self.NewCollection.delegate = self
+//        self.NewCollection.dataSource = self
+        
+        
+        //PopCollection.delegate = self
+        PopCollection.dataSource = self
+        
+        NewCollection.reloadData()
+        PopCollection.reloadData()
+       
+        
+        //페이징-------------------------------------------------------
         adPage.numberOfPages = imagName.count
         adPage.currentPage = 0
         adPage.pageIndicatorTintColor = UIColor.white
@@ -65,27 +89,23 @@ class MainViewController: UIViewController{
                }
            }
        }
-    
+
     
     @IBAction func imageControll(_ sender: UIPageControl) {
         AdImageView.image = UIImage(named: imagName[adPage.currentPage])
-    }
+    }// AD section에 이미지 부여
     
     @objc func updateTime(){
         let formatter = DateFormatter()
-        
         formatter.locale = Locale(identifier: "ko")
         formatter.dateFormat = "yyyy-MM-dd EEE a hh:mm" //년도-월-일 요일 (오전/오후) 시간:분
-        
         count += 1
         if count >= imagName.count {
             count = 0
       }
         displayImage(number: count)
-    }
+    }//AD 자동변경
    
-    
-    
     func displayImage(number: Int){
         AdImageView.image = UIImage(named: imagName[number])
     }
@@ -101,24 +121,66 @@ class MainViewController: UIViewController{
     }
     */
     
-   
+}
+
+//POP Collection data------------
+extension MainViewController:  UICollectionViewDataSource, MainPopCollectionModelProtocol {
     
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "myPageSegue"{
-                let myPageView = segue.destination as! MyPageViewController
     
-                // let item: Students = studentsList[(indexPath! as NSIndexPath).row]
-                let item = DBModel()
+   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return list.count
+        return feedItem2.count
+    }
     
-                let UPassword = item.UPassword!
-                let UName = item.UName!
-                let UTel = item.UTel!
-                let UPostcode = item.UPostcode!
-                let UAddr = item.UAddr!
-                
-                myPageView.myreceiveItems(UPassword, UName, UTel, UPostcode, UAddr)
-                print("mainView\(String(describing: UName))")
-            }
-        }
+    
+   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopCell", for: indexPath) as! MainPopCollectionViewCell
+        
+        let item: ContentDBModel = feedItem2[indexPath.row] as! ContentDBModel
+        cell.lbTitle?.text = "\(String(describing: item.ctitle))"
+        cell.wbCover?.load(URLRequest(url: URL(string: "\(String(describing: item.ccover))")!))
+        
+        cell.lbTitle.text = list[indexPath.row]
+        //cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
+        cell.wbCover?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
+
+        return cell
+    }
+    
+    
+    func itemDownloaded(items: NSArray) {
+        feedItem2 = items
+        self.PopCollection.reloadData()
+    }
     
 }
+    
+    
+
+//    extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+//
+//            func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//                return list.count
+//            }
+//            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCell", for: indexPath) as! MainNewCollectionViewCell
+//
+//                cell.lbNew.text = list[indexPath.row]
+//                cell.wbNew?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
+//
+//                return cell
+//            }
+//
+//    }
+
+//}
+//extension MainViewController :  UICollectionViewDelegateFlowlayout{
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+//
+//        if let message = message?[indexPath.item].text {
+//            let size = CGSize(width: self.view.frame.width,  height:1000)
+//            let options = NsStringDrawingOPtions.UserFontLeading.union( .userLineFrag)
+//        }
+//    }
+//}

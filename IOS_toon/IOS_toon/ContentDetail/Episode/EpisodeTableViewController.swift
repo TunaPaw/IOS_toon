@@ -1,46 +1,98 @@
 //
-//  SearchResultTableViewController.swift
+//  EpisodeTableViewController.swift
 //  IOS_toon
 //
-//  Created by Tuna on 2021/02/25.
+//  Created by Tuna on 2021/02/27.
 //
 
 import UIKit
+import WebKit
 
-class SearchResultTableViewController: UITableViewController {
+class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtocol {
+    
 
+    @IBOutlet var EpisodeTableView: UITableView!
+    @IBOutlet weak var wbCover: WKWebView!
+    
+    var feedItem: NSArray = NSArray()
+    var receiveCcode: String = ""
+    var receiveEcode: String = ""
+    var receiveTotalepi: String = ""
+    var receiveEpicon: String = ""
+    var receiveCover: String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       let episodeTableModel = EpisodeTableModel()
+        episodeTableModel.delegate = self
+        episodeTableModel.downloadItems()
+        
+        EpisodeTableView.rowHeight = 60
+        
+        wbCover.load(URLRequest(url: URL(string: "\(receiveCover)")!))
+        
+        print(Share.nowContentCode)
+    }
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+        self.EpisodeTableView.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
+        let queryModel = EpisodeTableModel()
+        queryModel.delegate = self
+        queryModel.downloadItems()
     }
 
+
+    @IBAction func btnCheck(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return feedItem.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as! EpisodeTableViewCell
 
         // Configure the cell...
+        let item: EpisodeDBModel = feedItem[indexPath.row] as! EpisodeDBModel
 
+        cell.lbEpi?.text = "\(item.Ecode!)화"
+        Share.nowEcode = ""
+        Share.nowEcode = "\(indexPath.row)"
+        receiveEcode = item.Ecode!
+        receiveEpicon = item.EContentImage1!
+        receiveCcode = Share.nowContentCode
         return cell
     }
-    */
+    
+    
+    func receiveItem(_ code: String, _ epi: String, _ cover: String){
+//        receivecode = code
+//        receiveTotalepi = epi
+        receiveCover = cover
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgEpicon"{
+            let detailView = segue.destination as! EpisodeViewController
+            let epicon = receiveEpicon
 
+            detailView.receiveItem(epicon)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
