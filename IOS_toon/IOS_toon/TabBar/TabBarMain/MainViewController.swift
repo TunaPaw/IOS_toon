@@ -48,7 +48,7 @@ class MainViewController: UIViewController{
 //        self.NewCollection.dataSource = self
         
         
-        //PopCollection.delegate = self
+        //NewCollection.dataSource = self
         PopCollection.dataSource = self
         
         NewCollection.reloadData()
@@ -90,7 +90,7 @@ class MainViewController: UIViewController{
            }
        }
 
-    
+    //-------------ad 이미지----------
     @IBAction func imageControll(_ sender: UIPageControl) {
         AdImageView.image = UIImage(named: imagName[adPage.currentPage])
     }// AD section에 이미지 부여
@@ -104,12 +104,12 @@ class MainViewController: UIViewController{
             count = 0
       }
         displayImage(number: count)
-    }//AD 자동변경
+    }//AD 시간차 변경
    
     func displayImage(number: Int){
         AdImageView.image = UIImage(named: imagName[number])
-    }
-
+    }//Ad 이미지 표시
+    
 
     /*
     // MARK: - Navigation
@@ -128,18 +128,20 @@ extension MainViewController:  UICollectionViewDataSource, MainPopCollectionMode
     
     
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return list.count
-        return feedItem2.count
+        return list.count
+       // return feedItem2.count
     }
     
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopCell", for: indexPath) as! MainPopCollectionViewCell
         
-        let item: ContentDBModel = feedItem2[indexPath.row] as! ContentDBModel
-        cell.lbTitle?.text = "\(String(describing: item.ctitle))"
-        cell.wbCover?.load(URLRequest(url: URL(string: "\(String(describing: item.ccover))")!))
-        
+        //let item: ContentDBModel = feedItem2[indexPath.row] as! ContentDBModel
+    
+    
+//        cell.lbTitle?.text = "\(String(describing: item.ctitle))"
+//        cell.wbCover?.load(URLRequest(url: URL(string: "\(String(describing: item.ccover))")!))
+//
         cell.lbTitle.text = list[indexPath.row]
         //cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
         cell.wbCover?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
@@ -150,10 +152,32 @@ extension MainViewController:  UICollectionViewDataSource, MainPopCollectionMode
     
     func itemDownloaded(items: NSArray) {
         feedItem2 = items
-        self.PopCollection.reloadData()
+        //self.PopCollection.reloadData()
     }
     
-}
+    func collectionView2(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         return list.count
+        // return feedItem2.count
+     }
+     
+     
+    func collectionView2(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCell", for: indexPath) as! MainNewCollectionViewCell
+         
+         //let item: ContentDBModel = feedItem2[indexPath.row] as! ContentDBModel
+     
+     
+ //        cell.lbTitle?.text = "\(String(describing: item.ctitle))"
+ //        cell.wbCover?.load(URLRequest(url: URL(string: "\(String(describing: item.ccover))")!))
+ //
+        cell.lb.text = list[indexPath.row]
+         //cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
+        cell.wv?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
+
+         return cell
+     }
+     
+
     
     
 
@@ -184,3 +208,9 @@ extension MainViewController:  UICollectionViewDataSource, MainPopCollectionMode
 //        }
 //    }
 //}
+//POP Collection data------------
+    
+    
+   
+
+}
