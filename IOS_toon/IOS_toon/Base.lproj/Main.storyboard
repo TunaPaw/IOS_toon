@@ -1338,6 +1338,7 @@
                                 <connections>
                                     <outlet property="lbGenre" destination="Nkr-kg-Rhr" id="Yyv-Tw-Ezl"/>
                                     <outlet property="lbTitle" destination="4Ae-A3-5tb" id="tW5-99-cA5"/>
+                                    <outlet property="lbView" destination="FwJ-zK-UM0" id="D8I-Mh-i50"/>
                                     <outlet property="wv" destination="S5o-oi-ZB2" id="3rP-qL-8O8"/>
                                 </connections>
                             </tableViewCell>

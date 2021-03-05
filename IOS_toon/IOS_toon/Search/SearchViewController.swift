@@ -7,7 +7,14 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, SearchResultModelProtocol {
+    var feedItem: NSArray = NSArray()
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+    }
+    
+   
+    
     
 
     @IBOutlet weak var SearchView: UIView!
@@ -19,6 +26,10 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         secondAnimation()
+        
+      
+        
+        //searchModel.checkItems(UserId: receiveSearch)
         
 //        guard let text = """
 // <div class="search-wrapper">
@@ -39,6 +50,7 @@ class SearchViewController: UIViewController {
 //                self. mTvText.sizeToFit()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {//애니메이션
     super.viewWillAppear(animated)
     SearchView.center.y -= view.bounds.height //위에 숨겨져 있음
@@ -52,7 +64,13 @@ class SearchViewController: UIViewController {
         }, completion:nil)
     }
     @IBAction func btnSearch(_ sender: UIButton) {
+        print("검색버튼 클릭_ 검색어:\(Stsearch)")
         Stsearch = SearchBar.text!
+        let searchModel  = SearchResultModel()
+        searchModel.delegate = self
+        searchModel.downloadItems(UserId: Stsearch)
+        print("검색버튼 클릭_ 검색어:\(Stsearch)")
+
     }
     
 
@@ -69,10 +87,21 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgSearch"{
             let detailView = segue.destination as! SearchResultTableViewController
-  
             let search = Stsearch
-            Share.search = search
-            detailView.receiveItems(search)
+            
+            let item: ContentDBModel = feedItem[(feedItem.count)] as! ContentDBModel
+            
+            let sid = item.cview!
+            let sname = item.ctitle!
+            let sdept = item.ccode!
+            let  sphone = item.ccover!
+
+            
+            
+            print("프리패어전_ 검색어:\(search)")
+            
+            detailView.receiveItems(sid, sname, sdept, sphone)
+     
          
         }
             

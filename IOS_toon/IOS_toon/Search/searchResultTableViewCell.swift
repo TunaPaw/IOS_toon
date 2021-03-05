@@ -13,6 +13,7 @@ class searchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var wv: WKWebView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbGenre: UILabel!
+    @IBOutlet weak var lbView: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
