@@ -48,7 +48,7 @@ class MainViewController: UIViewController{
 //        self.NewCollection.dataSource = self
         
         
-        //NewCollection.dataSource = self
+       // NewCollection.dataSource = self
         PopCollection.dataSource = self
         
         NewCollection.reloadData()
@@ -124,93 +124,37 @@ class MainViewController: UIViewController{
 }
 
 //POP Collection data------------
-extension MainViewController:  UICollectionViewDataSource, MainPopCollectionModelProtocol {
+extension MainViewController:  UICollectionViewDataSource {
     
     
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
-       // return feedItem2.count
     }
     
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopCell", for: indexPath) as! MainPopCollectionViewCell
-        
-        //let item: ContentDBModel = feedItem2[indexPath.row] as! ContentDBModel
-    
-    
-//        cell.lbTitle?.text = "\(String(describing: item.ctitle))"
-//        cell.wbCover?.load(URLRequest(url: URL(string: "\(String(describing: item.ccover))")!))
-//
         cell.lbTitle.text = list[indexPath.row]
-        //cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
         cell.wbCover?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
 
         return cell
     }
     
-    
     func itemDownloaded(items: NSArray) {
         feedItem2 = items
-        //self.PopCollection.reloadData()
     }
     
-    func collectionView2(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func NewCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return list.count
-        // return feedItem2.count
      }
      
      
-    func collectionView2(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func NewCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCell", for: indexPath) as! MainNewCollectionViewCell
-         
-         //let item: ContentDBModel = feedItem2[indexPath.row] as! ContentDBModel
-     
-     
- //        cell.lbTitle?.text = "\(String(describing: item.ctitle))"
- //        cell.wbCover?.load(URLRequest(url: URL(string: "\(String(describing: item.ccover))")!))
- //
         cell.lb.text = list[indexPath.row]
-         //cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
         cell.wv?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
 
          return cell
      }
      
-
-    
-    
-
-//    extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-//
-//            func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//                return list.count
-//            }
-//            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCell", for: indexPath) as! MainNewCollectionViewCell
-//
-//                cell.lbNew.text = list[indexPath.row]
-//                cell.wbNew?.load(URLRequest(url: URL(string: "http://toonimage.angle777899.com/small/8059.jpg")!))
-//
-//                return cell
-//            }
-//
-//    }
-
-//}
-//extension MainViewController :  UICollectionViewDelegateFlowlayout{
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-//
-//        if let message = message?[indexPath.item].text {
-//            let size = CGSize(width: self.view.frame.width,  height:1000)
-//            let options = NsStringDrawingOPtions.UserFontLeading.union( .userLineFrag)
-//        }
-//    }
-//}
-//POP Collection data------------
-    
-    
-   
-
 }

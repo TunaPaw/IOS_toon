@@ -30,9 +30,7 @@
 		A50940D125E644A7000D3A84 /* RecentTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940D025E644A7000D3A84 /* RecentTableModel.swift */; };
 		A50940D425E64832000D3A84 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940D325E64832000D3A84 /* RecentTableViewCell.swift */; };
 		A54062F425EF6370007353E7 /* MainPopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54062F325EF6370007353E7 /* MainPopCollectionViewCell.swift */; };
-		A540630025EF8B8D007353E7 /* MainPopCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54062FF25EF8B8D007353E7 /* MainPopCollectionModel.swift */; };
 		A540639C25EFCF7A007353E7 /* MainNewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A540639B25EFCF7A007353E7 /* MainNewCollectionViewCell.swift */; };
-		A54063AD25EFD34D007353E7 /* MainNewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54063AC25EFD34D007353E7 /* MainNewCollectionViewController.swift */; };
 		A54063C625F1115A007353E7 /* icon6.png in Resources */ = {isa = PBXBuildFile; fileRef = A54063C025F1115A007353E7 /* icon6.png */; };
 		A54063CF25F133EC007353E7 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54063CE25F133EC007353E7 /* SearchResultModel.swift */; };
 		A54063D225F13B03007353E7 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54063D125F13B03007353E7 /* SearchResultTableViewController.swift */; };
@@ -96,9 +94,7 @@
 		A50940D025E644A7000D3A84 /* RecentTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableModel.swift; sourceTree = "<group>"; };
 		A50940D325E64832000D3A84 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		A54062F325EF6370007353E7 /* MainPopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPopCollectionViewCell.swift; sourceTree = "<group>"; };
-		A54062FF25EF8B8D007353E7 /* MainPopCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPopCollectionModel.swift; sourceTree = "<group>"; };
 		A540639B25EFCF7A007353E7 /* MainNewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewCollectionViewCell.swift; sourceTree = "<group>"; };
-		A54063AC25EFD34D007353E7 /* MainNewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewCollectionViewController.swift; sourceTree = "<group>"; };
 		A54063C025F1115A007353E7 /* icon6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon6.png; sourceTree = "<group>"; };
 		A54063CE25F133EC007353E7 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 		A54063D125F13B03007353E7 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
@@ -214,8 +210,6 @@
 			children = (
 				A5E79D0B25DEAC9B00909E77 /* MainViewController.swift */,
 				A54062F325EF6370007353E7 /* MainPopCollectionViewCell.swift */,
-				A54062FF25EF8B8D007353E7 /* MainPopCollectionModel.swift */,
-				A54063AC25EFD34D007353E7 /* MainNewCollectionViewController.swift */,
 				A540639B25EFCF7A007353E7 /* MainNewCollectionViewCell.swift */,
 			);
 			path = TabBarMain;
@@ -497,12 +491,10 @@
 				6F472D8725EF70280069DAD1 /* myPageModel.swift in Sources */,
 				A50940B325E597A7000D3A84 /* FavoriteTableModel.swift in Sources */,
 				A58CAA4425F20D19007893A3 /* BookTableViewController.swift in Sources */,
-				A540630025EF8B8D007353E7 /* MainPopCollectionModel.swift in Sources */,
 				A54063D525F13C62007353E7 /* searchResultTableViewCell.swift in Sources */,
 				A50461E025E7A2DA00ED1D0F /* ContentDetailViewController.swift in Sources */,
 				A5633EB525EA2DAC008FA514 /* ReviewTableViewController.swift in Sources */,
 				A5E79D0C25DEAC9C00909E77 /* MainViewController.swift in Sources */,
-				A54063AD25EFD34D007353E7 /* MainNewCollectionViewController.swift in Sources */,
 				A5D1F15225E96F5500751EB0 /* EpisodeViewController.swift in Sources */,
 				A5633EBC25EA301E008FA514 /* ReviewTableModel.swift in Sources */,
 				A58CAA4525F20D19007893A3 /* BookTableViewCell.swift in Sources */,
