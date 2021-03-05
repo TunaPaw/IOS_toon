@@ -34,6 +34,7 @@ class myPageModel{
         task.resume()
     }
     
+    var Uname : String = ""
         
     func parseJONS(_ data: Data){
         var jsonResult = NSArray()
@@ -57,19 +58,40 @@ class myPageModel{
                let UTel = jsonElement["UTel"] as? String,
                let UPostcode = jsonElement["UPostcode"] as? String,
                let UAddr = jsonElement["UAddr"] as? String{
+                
                 query.UPassword = UPassword
                 query.UName = UName
                 query.UTel = UTel
                 query.UPostcode = UPostcode
                 query.UAddr = UAddr
-                locations.add(query)
+                print("parsing:\(UName)")
+                
+                Uname = query.UName!
             }
+            locations.add(query)
         }
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.itemDownloaded(items: locations)
-        print(locations)
+        print("mypageModel:\(locations)")
         })
+        
     }
-
 }
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "myPageSegue"{
+//            let myPageView = segue.destination as! MyPageViewController
+//
+//            // let item: Students = studentsList[(indexPath! as NSIndexPath).row]
+//            let item: DBModel = DBModel.init() // NSIndexPath 생략가능
+//
+//            let UPassword = item.UPassword
+//            let UName = item.UName
+//            let UTel = item.UTel
+//            let UPostcode = item.UPostcode
+//            let UAddr = item.UAddr
+//
+//            myPageView.receiveItems(UPassword:UPassword, UName: UName, UTel: UTel, UPostcode: UPostcode, UAddr:UAddr)
+//            print("mainView\(String(describing: UName))")
+//        }
 

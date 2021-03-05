@@ -8,7 +8,10 @@
 import UIKit
 
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController{
+
+ 
+    
 
     @IBOutlet weak var adPage: UIPageControl!
     @IBOutlet weak var AdImageView: UIImageView!
@@ -97,5 +100,25 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+   
+    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "myPageSegue"{
+                let myPageView = segue.destination as! MyPageViewController
+    
+                // let item: Students = studentsList[(indexPath! as NSIndexPath).row]
+                let item = DBModel()
+    
+                let UPassword = item.UPassword!
+                let UName = item.UName!
+                let UTel = item.UTel!
+                let UPostcode = item.UPostcode!
+                let UAddr = item.UAddr!
+                
+                myPageView.myreceiveItems(UPassword, UName, UTel, UPostcode, UAddr)
+                print("mainView\(String(describing: UName))")
+            }
+        }
+    
 }

@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class MyPageViewController: UIViewController, myPageModelProtocol{
     
     var dsAddr = ""
@@ -22,9 +24,12 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var myTel: UITextField!
     @IBOutlet weak var myPassword: UITextField!
     @IBOutlet weak var myName: UITextField!
-    var feedItem: NSArray = NSArray()
+    
+    var name: NSString = ""
+    var feedItem: NSArray = []
     func itemDownloaded(items: NSArray) {
-        feedItem = items
+        name = items[0].self as! NSString
+        
     }
     
 
@@ -33,22 +38,25 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var btnWithdrawal: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        print(name)
         myEmail.text = Share.userID
+        myEmail.isUserInteractionEnabled = false
         secondAnimation()
+        
         let mypageModel = myPageModel()
         mypageModel.delegate = self
-        
         mypageModel.checkItems(UserId: myEmail.text!)
         
+
+        let query = DBModel()
+        myAddr.text = query.UAddr
         
-        myPassword.text = dsPassword
         myName.text = dsName
         myPostcode.text = dsPostcode
-        myAddr.text = dsAddr
         myTel.text = dsTel
-        
-        // Do any additional setup after loading the view.
+        print("receiveItem\(dsName)")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {//애니메이션
@@ -75,18 +83,21 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     }
     */
 
-    func receiveItems(UPassword: String!, UName: String!, UTel: String!, UPostcode: String!, UAddr: String!){
-        dsName = UName!
-        dsPassword = UPassword!
-        dsPostcode = UPostcode!
-        dsTel = UTel!
-        dsAddr = UAddr!
-        
+    func myreceiveItems(_ UPassword: String,_ UName: String, _ UTel: String, _ UPostcode: String, _ UAddr: String){
+        dsName = UName
+        dsPassword = UPassword
+        dsPostcode = UPostcode
+        dsTel = UTel
+        dsAddr = UAddr
+        print("receiveItems dsName:\(dsName)")
     }
     
     // 키보드 숨기기
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
-
+    
+ 
+        
+    
 }

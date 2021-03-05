@@ -64,7 +64,7 @@ extension KakaoZipCodeVCViewController: WKScriptMessageHandler {
             address = data["roadAddress"] as? String ?? ""
             guard let previousVC = presentingViewController as? JoinViewController else { return }
             previousVC.txtJoinAddr.text = address
-            self.dismiss(animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
             print(address)
             
             
