@@ -7,11 +7,16 @@
 
 import UIKit
 
-class FindViewController: UIViewController {
+class FindViewController: UIViewController, findPwModelProtocol {
+
+    
 
     @IBOutlet weak var findChoice: UISegmentedControl!
     @IBOutlet weak var lblId: UILabel!
     @IBOutlet weak var txtId: UITextField!
+    @IBOutlet weak var txtName: UITextField!
+    var findPW: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lblId.isHidden = true
@@ -32,7 +37,18 @@ class FindViewController: UIViewController {
             }
     }
     
-
+    @IBAction func btnFind(_ sender: UIButton) {
+        if findChoice.selectedSegmentIndex == 1 {
+           let findpwModel = findPwModel()
+            findpwModel.delegate = self
+            findpwModel.checkItems(UserId: txtId.text!, UserName: txtName.text!)
+            print("findPw: \(findPW)")
+        }
+    }
+    func itemDownloaded(items: String) {
+        findPW = items
+        print("findPw: \(findPW)")
+    }
     /*
     // MARK: - Navigation
 

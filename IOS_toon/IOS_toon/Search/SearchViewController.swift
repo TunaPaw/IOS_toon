@@ -8,7 +8,9 @@
 import UIKit
 
 class SearchViewController: UIViewController, SearchResultModelProtocol {
-   
+    @IBOutlet weak var searchTable: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var feedItem: NSArray = NSArray()
     func itemDownloaded(items: NSArray) {
         feedItem = items
@@ -20,13 +22,6 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
         searchResult.lbView.text! = item.cview!
         searchResult.lbTitle.text! = item.ctitle!
     }
-    
-   
-    
-    
-
-    @IBOutlet weak var SearchView: UIView!
-    @IBOutlet weak var SearchBar: UISearchBar!
     
     var Stsearch : String = ""
     
@@ -61,25 +56,25 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
     
     override func viewWillAppear(_ animated: Bool) {//애니메이션
     super.viewWillAppear(animated)
-    SearchView.center.y -= view.bounds.height //위에 숨겨져 있음
+   // SearchView.center.y -= view.bounds.height //위에 숨겨져 있음
 //    secondLabel.center.y += view.bounds.height //아래에 숨겨져있음
   // hiddenLabel.alpha = 0.0 // 알파0
     }
     func secondAnimation() {
     //animate second label
         UIView.animate(withDuration: 1.1, delay: 0.0, options: [], animations: {
-        self.SearchView.center.y += self.view.bounds.height
-        }, completion:nil)
-    }
-    @IBAction func btnSearch(_ sender: UIButton) {
-        print("검색버튼 클릭_ 검색어:\(Stsearch)")
-        Stsearch = SearchBar.text!
-        let searchModel  = SearchResultModel()
-        searchModel.delegate = self
-        searchModel.downloadItems(UserId: Stsearch)
-        print("검색버튼 클릭_ 검색어:\(Stsearch)")
-
-    }
+//        self.SearchView.center.y += self.view.bounds.height
+//        }, completion:nil)
+//    }
+//    @IBAction func btnSearch(_ sender: UIButton) {
+//        print("검색버튼 클릭_ 검색어:\(Stsearch)")
+//        Stsearch = SearchBar.text!
+//        let searchModel  = SearchResultModel()
+//        searchModel.delegate = self
+//        searchModel.downloadItems(UserId: Stsearch)
+//        print("검색버튼 클릭_ 검색어:\(Stsearch)")
+//
+//    }
     
 
     /*
@@ -92,17 +87,17 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
     }
     */
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sgSearch"{
-            let detailView = segue.destination as! SearchResultTableViewController
-            let item: ContentDBModel = feedItem[0] as! ContentDBModel
-            
-            let searchResult = searchResultTableViewCell()
-            
-            searchResult.lbGenre.text! = item.cgenre!
-            searchResult.lbView.text! = item.cview!
-            searchResult.lbTitle.text! = item.ctitle!
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "sgSearch"{
+//            let detailView = segue.destination as! SearchResultTableViewController
+//            let item: ContentDBModel = feedItem[0] as! ContentDBModel
+//
+//            let searchResult = searchResultTableViewCell()
+//
+//            searchResult.lbGenre.text! = item.cgenre!
+//            searchResult.lbView.text! = item.cview!
+//            searchResult.lbTitle.text! = item.ctitle!
+//
 
             //print("프리패어전_ 검색어:\(search)")
 
@@ -112,7 +107,7 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
         }
             
         
-    }
+  //  }
     
     
-}
+//}
