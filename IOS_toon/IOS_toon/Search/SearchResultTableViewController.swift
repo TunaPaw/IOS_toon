@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchResultTableViewController: UITableViewController,SearchResultModelProtocol {
+class SearchResultTableViewController: UITableViewController {
     
     var receiveId = ""
     var receiveName =  ""
@@ -15,10 +15,10 @@ class SearchResultTableViewController: UITableViewController,SearchResultModelPr
     var receivePhone = ""
     
     
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-        self.SearchTable.reloadData()
-    }
+//    func itemDownloaded(items: NSArray) {
+//        feedItem = items
+//        self.SearchTable.reloadData()
+//    }
     
     
     @IBOutlet var SearchTable: UITableView!
@@ -29,8 +29,8 @@ class SearchResultTableViewController: UITableViewController,SearchResultModelPr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchModel  = SearchResultModel()
-        searchModel.delegate = self
+//        let searchModel  = SearchResultModel()
+//        searchModel.delegate = self
         //searchModel.downloadItems()
         
         //searchModel.checkItems(UserId: receiveSearch)
@@ -56,8 +56,8 @@ class SearchResultTableViewController: UITableViewController,SearchResultModelPr
     
     
     override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
-        let queryModel = SearchResultModel()
-        queryModel.delegate = self
+//        let queryModel = SearchResultModel()
+//        queryModel.delegate = self
         // queryModel.downloadItems()
     }
     
@@ -88,7 +88,8 @@ class SearchResultTableViewController: UITableViewController,SearchResultModelPr
         
         cell.wv?.load(URLRequest(url: URL(string: "\(receivePhone)")!))
         cell.lbGenre?.text = "장르 : \(receiveDept)"
-        cell.lbTitle?.text = "제목 : \(receiveName)"
+        //cell.lbTitle?.text = "제목 : \(item.ctitle)"
+        //print("제목 : \(item.ctitle)")
         cell.lbView?.text = "조회 : \(receiveId)"
 
         return cell

@@ -8,9 +8,17 @@
 import UIKit
 
 class SearchViewController: UIViewController, SearchResultModelProtocol {
+   
     var feedItem: NSArray = NSArray()
     func itemDownloaded(items: NSArray) {
         feedItem = items
+        let searchResult = searchResultTableViewCell()
+        let item: ContentDBModel = feedItem[0] as! ContentDBModel
+        
+        
+        searchResult.lbGenre.text! = item.cgenre!
+        searchResult.lbView.text! = item.cview!
+        searchResult.lbTitle.text! = item.ctitle!
     }
     
    
@@ -87,22 +95,20 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgSearch"{
             let detailView = segue.destination as! SearchResultTableViewController
-            let search = Stsearch
+            let item: ContentDBModel = feedItem[0] as! ContentDBModel
             
-            let item: ContentDBModel = feedItem[(feedItem.count)] as! ContentDBModel
+            let searchResult = searchResultTableViewCell()
             
-            let sid = item.cview!
-            let sname = item.ctitle!
-            let sdept = item.ccode!
-            let  sphone = item.ccover!
+            searchResult.lbGenre.text! = item.cgenre!
+            searchResult.lbView.text! = item.cview!
+            searchResult.lbTitle.text! = item.ctitle!
 
-            
-            
-            print("프리패어전_ 검색어:\(search)")
-            
-            detailView.receiveItems(sid, sname, sdept, sphone)
-     
-         
+
+            //print("프리패어전_ 검색어:\(search)")
+
+            //detailView.receiveItems(sid, sname, sdept, sphone)
+
+
         }
             
         

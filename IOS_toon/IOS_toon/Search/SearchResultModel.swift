@@ -82,7 +82,7 @@ class SearchResultModel {
     }
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.itemDownloaded(items: locations)
-            print("\(locations)")
+            print("search model parsing : \(locations)")
         })
     }
 
