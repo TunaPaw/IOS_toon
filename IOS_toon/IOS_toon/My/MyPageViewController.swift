@@ -29,6 +29,12 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     var feedItem: NSArray = NSArray()
     func itemDownloaded(items: NSArray) {
         feedItem = items
+        let item: DBModel = feedItem[0] as! DBModel
+        myPassword.text = item.UPassword!
+        myName.text = item.UName!
+        myAddr.text = item.UAddr!
+        myTel.text = item.UTel!
+        myPostcode.text = item.UPostcode!
     }
     
 
@@ -38,10 +44,9 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let item: DBModel = feedItem[0] as! DBModel
-        let dbname = item.UPassword!
+
         
-        print("view did load name : \(dbname)")
+    
         myEmail.text = Share.userID
         myEmail.isUserInteractionEnabled = false
         secondAnimation()
@@ -49,10 +54,6 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
         let mypageModel = myPageModel()
         mypageModel.delegate = self
         mypageModel.checkItems(UserId: myEmail.text!)
-        
-
-        let query = DBModel()
-        myAddr.text = query.UAddr
         
         myName.text = dsName
         myPostcode.text = dsPostcode
