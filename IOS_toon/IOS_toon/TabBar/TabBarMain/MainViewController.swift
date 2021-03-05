@@ -140,10 +140,6 @@ extension MainViewController:  UICollectionViewDataSource {
         return cell
     }
     
-    func itemDownloaded(items: NSArray) {
-        feedItem2 = items
-    }
-    
     func NewCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return list.count
      }
