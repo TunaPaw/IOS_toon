@@ -26,10 +26,9 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var myName: UITextField!
     
     var name: NSString = ""
-    var feedItem: NSArray = []
+    var feedItem: NSArray = NSArray()
     func itemDownloaded(items: NSArray) {
-        name = items[0].self as! NSString
-        
+        feedItem = items
     }
     
 
@@ -38,8 +37,11 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     @IBOutlet weak var btnWithdrawal: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(name)
+        
+        let item: DBModel = feedItem[0] as! DBModel
+        let dbname = item.UPassword!
+        
+        print("view did load name : \(dbname)")
         myEmail.text = Share.userID
         myEmail.isUserInteractionEnabled = false
         secondAnimation()
