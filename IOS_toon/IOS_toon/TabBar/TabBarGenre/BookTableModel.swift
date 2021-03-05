@@ -15,7 +15,6 @@ class BookTableModel {
     var delegate: BookTableModelProtocol!
     
     let urlPath = "http://127.0.0.1:8080/iosproject/recentRead.jsp"
-    
     func downloadItems(){
         let url = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

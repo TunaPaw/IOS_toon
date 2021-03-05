@@ -498,7 +498,6 @@
         <!--Item-->
         <scene sceneID="JIq-U3-ZYl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ezA-RO-vne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="C3f-ea-YCJ" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Odh-01-cHI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -527,6 +526,7 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Item" id="DWU-0f-uX3"/>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ezA-RO-vne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4562" y="1398"/>
         </scene>

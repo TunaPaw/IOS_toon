@@ -69,7 +69,7 @@ class BookTableViewController: UITableViewController, BookTableModelProtocol {
 
     
 
-//스와이프
+    //스와이프
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let favoriteAction = UIContextualAction(style: .normal, title:  "즐겨찾기", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
