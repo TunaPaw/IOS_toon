@@ -19,6 +19,7 @@
 		6F472DCA25F249900069DAD1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472DC625F2498F0069DAD1 /* SearchViewController.swift */; };
 		6F472DCB25F249900069DAD1 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472DC725F249900069DAD1 /* SearchResultTableViewController.swift */; };
 		6F472DCC25F249900069DAD1 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472DC825F249900069DAD1 /* SearchResultModel.swift */; };
+		6F472DCF25F76F870069DAD1 /* findIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F472DCE25F76F870069DAD1 /* findIdModel.swift */; };
 		6FA415F725DF6CB40018B1A4 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */; };
 		6FA415FC25E360AE0018B1A4 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA415FB25E360AE0018B1A4 /* DBModel.swift */; };
 		6FA415FF25E363310018B1A4 /* InsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA415FE25E363310018B1A4 /* InsertModel.swift */; };
@@ -77,6 +78,7 @@
 		6F472DC625F2498F0069DAD1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6F472DC725F249900069DAD1 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		6F472DC825F249900069DAD1 /* SearchResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		6F472DCE25F76F870069DAD1 /* findIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findIdModel.swift; sourceTree = "<group>"; };
 		6FA415F625DF6CB40018B1A4 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		6FA415FB25E360AE0018B1A4 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		6FA415FE25E363310018B1A4 /* InsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertModel.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				6F472D8225EF5C880069DAD1 /* LoginModel.swift */,
 				6F3C5CD325DE6F3000692EF1 /* FindViewController.swift */,
 				6F472DBF25F243060069DAD1 /* findPwModel.swift */,
+				6F472DCE25F76F870069DAD1 /* findIdModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				6F472DC025F243060069DAD1 /* findPwModel.swift in Sources */,
 				6F472D4125E38A8F0069DAD1 /* EmailCheckModel.swift in Sources */,
 				A50940B725E627AA000D3A84 /* ContentDBModel.swift in Sources */,
+				6F472DCF25F76F870069DAD1 /* findIdModel.swift in Sources */,
 				6FBE46CC25DE597900971EFC /* ViewController.swift in Sources */,
 				6F472D5025E8E3AA0069DAD1 /* KakaoZipCodeVCViewController.swift in Sources */,
 				6FBE46C825DE597900971EFC /* AppDelegate.swift in Sources */,

@@ -57,5 +57,4 @@ class ContentDBModel: NSObject {
         self.ccover = ccover
         self.ctitle = ctitle
     }
-    
 }
