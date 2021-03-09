@@ -146,5 +146,26 @@ class SearchResultTableViewController: UITableViewController, SearchResultModelP
     }
     */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgDetail"{
+            let cell = sender as! UITableViewCell
+            let indexPath = self.SearchTable.indexPath(for: cell)
+            let detailView = segue.destination as! ContentDetailViewController
+            
+            let item: ContentDBModel = feedItem[(indexPath!.row)] as! ContentDBModel
+            
+            let code = item.ccode!
+            let cover = item.ccover!
+            let title = item.ctitle!
+            let genre = item.cgenre!
+            let view = item.cview!
+            let insert = item.cinsert!
+            let delete = item.cdelete!
+            let author = item.cauthor!
+            let subtitle = item.csubtitle!
+            let episode = item.cepisode!
 
+            detailView.receiveItems(code, cover, title, genre, view, insert,  delete, author, subtitle, episode)
+        }
+    }
 }

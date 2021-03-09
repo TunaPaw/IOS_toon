@@ -886,6 +886,9 @@
                                 <state key="normal" title="로그아웃">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLogout:" destination="8gb-Gw-uwN" eventType="touchUpInside" id="8Bw-T6-R9L"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전화번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Uu-yE-8bm">
                                 <rect key="frame" x="79" y="498" width="232" height="34"/>
@@ -1335,6 +1338,7 @@
                                     <outlet property="lbTitle" destination="4Ae-A3-5tb" id="tW5-99-cA5"/>
                                     <outlet property="lbView" destination="FwJ-zK-UM0" id="D8I-Mh-i50"/>
                                     <outlet property="wv" destination="S5o-oi-ZB2" id="3rP-qL-8O8"/>
+                                    <segue destination="est-k9-7w8" kind="show" identifier="sgDetail" id="iVO-D6-SGL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1350,11 +1354,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hB6-AP-44K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4596.9230769230771" y="546.6824644549763"/>
+            <point key="canvasLocation" x="5505" y="462"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DiL-D4-UrY"/>
+        <segue reference="iVO-D6-SGL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ad1.png" width="807" height="409"/>

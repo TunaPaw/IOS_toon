@@ -92,7 +92,6 @@ class ContentDetailViewController: UIViewController {
 //    }
 //
 
-    
     func receiveItems( _ code: String, _ cover: String, _ title: String, _ genre: String, _ view: String, _ insert: String, _ delete: String, _ author: String, _ subtitle: String, _ episode: String){
         
         
@@ -110,6 +109,15 @@ class ContentDetailViewController: UIViewController {
 
 //Contentcode 넘기기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if Share.userID == ""{
+            let myAlert = UIAlertController(title: "알림", message: "로그인 후 사용가능합니다!", preferredStyle: UIAlertController.Style.alert)
+                       let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                       myAlert.addAction(okAction)
+                       self.present(myAlert, animated:true, completion:nil);
+
+            
+        }else{
         if segue.identifier == "sgReview"{
             let detailView = segue.destination as! ReviewTableViewController
             let cover = receivecover
@@ -131,5 +139,5 @@ class ContentDetailViewController: UIViewController {
             
         }
     }
-    
+    }
 }

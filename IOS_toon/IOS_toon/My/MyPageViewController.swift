@@ -102,5 +102,8 @@ class MyPageViewController: UIViewController, myPageModelProtocol{
     
  
         
+    @IBAction func btnLogout(_ sender: UIButton) {
+        Share.userID = ""
+    }
     
 }
