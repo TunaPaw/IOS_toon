@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController{
+class SearchViewController: UIViewController,UISearchBarDelegate{
    
     var feedItem: NSArray = NSArray()
 //    func itemDownloaded(items: NSArray) {
@@ -33,7 +33,7 @@ class SearchViewController: UIViewController{
         super.viewDidLoad()
         
         secondAnimation()
-        
+        SearchBar.delegate = self
         
       
         
@@ -62,6 +62,7 @@ class SearchViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {//애니메이션
     super.viewWillAppear(animated)
     SearchView.center.y -= view.bounds.height //위에 숨겨져 있음
+    //secondAnimation()
 //    secondLabel.center.y += view.bounds.height //아래에 숨겨져있음
   // hiddenLabel.alpha = 0.0 // 알파0
     }
@@ -72,16 +73,14 @@ class SearchViewController: UIViewController{
         }, completion:nil)
     }
     @IBAction func btnSearch(_ sender: UIButton) {
+        
+        Share.searchKey = SearchBar.text!
 //        print("검색버튼 클릭_ 검색어:\(Stsearch)")
 //        Stsearch = SearchBar.text!
 //        let searchModel  = SearchResultModel()
 //        searchModel.delegate = self
 //        searchModel.downloadItems()
 //        print("검색버튼 클릭_ 검색어:\(Stsearch)")
-
-    }
-    
-
     /*
     // MARK: - Navigation
 
@@ -112,7 +111,7 @@ class SearchViewController: UIViewController{
 //        }
 //
 //
-//    }
+    }
     
     
 }

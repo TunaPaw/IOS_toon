@@ -62,12 +62,6 @@ class SearchResultTableViewController: UITableViewController, SearchResultModelP
     }
     
     
-//    override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
-////        let queryModel = SearchResultModel()
-////        queryModel.delegate = self
-//        // queryModel.downloadItems()
-//    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

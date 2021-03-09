@@ -55,12 +55,9 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
 
         // Configure the cell...
         let item: ContentDBModel = feedItem[indexPath.row] as! ContentDBModel
+    
         
-        imageurl = "\(item.ccover!)"
-        
-     
-        
-        cell.RwbImage?.load(URLRequest(url: URL(string: "\(imageurl)")!))
+        cell.RwbImage?.load(URLRequest(url: URL(string: "\(item.ccover!)")!))
         cell.RlbView?.text = "조회 : \(item.cview!)"
         cell.RlbGenre?.text = "장르 : \(item.cgenre!)"
         cell.RlbTitle?.text = "제목 : \(item.ctitle!)"

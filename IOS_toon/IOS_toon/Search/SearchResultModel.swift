@@ -13,15 +13,15 @@ protocol SearchResultModelProtocol: class {
 
 class SearchResultModel {
     var delegate: SearchResultModelProtocol!
-    var receiveSearch : String = ""
-    let urlPath = "http://127.0.0.1:8080/iosproject/favoriteRead.jsp"
+    var receiveSearch : String = Share.searchKey
+    var urlPath = "http://127.0.0.1:8080/iosproject/SearchList.jsp"
     
     func downloadItems(){
-//        let urlAdd = "?now=\(UserId)"
-       // urlPath = urlPath+urlAdd
-       //urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+                let urlAdd = "?now=\(receiveSearch)"
+        urlPath = urlPath+urlAdd
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         //print("모델_ 검색어:\(UserId)")
-        print("모델_ urlpath:\(urlPath)")
+        print("모델_ urlpath:\(receiveSearch)")
         let url = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
