@@ -7,7 +7,8 @@
 
 import UIKit
 
-class SearchResultTableViewController: UITableViewController {
+class SearchResultTableViewController: UITableViewController, SearchResultModelProtocol {
+    
     
     var receiveId = ""
     var receiveName =  ""
@@ -29,9 +30,11 @@ class SearchResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let searchModel  = SearchResultModel()
-//        searchModel.delegate = self
-        //searchModel.downloadItems()
+        let searchModel  = SearchResultModel()
+        searchModel.delegate = self
+        searchModel.downloadItems()
+        
+        SearchTable.rowHeight = 200
         
         //searchModel.checkItems(UserId: receiveSearch)
 
@@ -44,6 +47,10 @@ class SearchResultTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+        self.SearchTable.reloadData()
+    }
     // MARK: - Table view data source
 
     
@@ -55,11 +62,11 @@ class SearchResultTableViewController: UITableViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
-//        let queryModel = SearchResultModel()
-//        queryModel.delegate = self
-        // queryModel.downloadItems()
-    }
+//    override func viewWillAppear(_ animated: Bool) { // 입력 , 수정, 삭제후 DB 재구성 -> Table 재구성
+////        let queryModel = SearchResultModel()
+////        queryModel.delegate = self
+//        // queryModel.downloadItems()
+//    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -86,19 +93,18 @@ class SearchResultTableViewController: UITableViewController {
 //        cell.lbTitle?.text = "제목 : \(item.ctitle!)"
 //        cell.lbView?.text = "조회 : \(item.cview!)"
         
-        cell.wv?.load(URLRequest(url: URL(string: "\(receivePhone)")!))
-        cell.lbGenre?.text = "장르 : \(receiveDept)"
-        //cell.lbTitle?.text = "제목 : \(item.ctitle)"
-        //print("제목 : \(item.ctitle)")
-        cell.lbView?.text = "조회 : \(receiveId)"
+        cell.wv?.load(URLRequest(url: URL(string: "\(imageurl)")!))
+        cell.lbGenre?.text = "장르 : \(item.cgenre!)"
+        cell.lbTitle?.text = "제목 : \(item.ctitle!)"
+        cell.lbView?.text = "조회 : \(item.cview!)"
 
         return cell
     }
     
-    func receiveItems(_ search: String){
-        receiveSearch = search
-        print("리시브_ 검색어:\(search)")
-    }
+//    func receiveItems(_ search: String){
+//        receiveSearch = search
+//        print("리시브_ 검색어:\(search)")
+//    }
     
 
     /*

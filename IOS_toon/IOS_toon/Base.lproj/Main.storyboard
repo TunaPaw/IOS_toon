@@ -978,28 +978,39 @@
         <scene sceneID="YBJ-Gm-1jk">
             <objects>
                 <viewController id="Nkx-sE-0OY" customClass="SearchViewController" customModule="IOS_toon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FTv-b6-bmR">
+                    <view key="view" contentMode="scaleToFill" id="irZ-vc-K99">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TzA-YW-XqM">
-                                <rect key="frame" x="16" y="88" width="358" height="722"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wx-S8-ieW">
+                                <rect key="frame" x="0.0" y="287" width="390" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpH-F3-REx">
+                                        <rect key="frame" x="32" y="86" width="326" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odx-d1-t3E">
+                                        <rect key="frame" x="172" y="166" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnSearch:" destination="Nkx-sE-0OY" eventType="touchUpInside" id="wKz-Le-1t7"/>
+                                            <segue destination="7nS-dX-gB1" kind="show" identifier="sgSearch" id="ffR-Jb-dHi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" text="" id="w6L-g2-5JW">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                            </tableView>
+                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="bBJ-sY-qrf"/>
+                        <viewLayoutGuide key="safeArea" id="Nyn-Ml-pdo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="dEy-mE-B0T"/>
                     <connections>
-                        <outlet property="searchBar" destination="w6L-g2-5JW" id="DUT-Vk-2d6"/>
-                        <outlet property="searchTable" destination="TzA-YW-XqM" id="Fht-9Y-3H0"/>
+                        <outlet property="SearchBar" destination="cpH-F3-REx" id="vPq-5T-0vK"/>
+                        <outlet property="SearchView" destination="8Wx-S8-ieW" id="kGe-Hi-xh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yed-eU-R1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

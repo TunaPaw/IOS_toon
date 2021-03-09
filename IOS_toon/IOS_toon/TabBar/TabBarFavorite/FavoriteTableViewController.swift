@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoriteTableViewController: UITableViewController, FavoriteTableModelProtocol {
-    
+                                                             
     
     @IBOutlet var FavoriteTableView: UITableView!
     

@@ -7,19 +7,18 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, SearchResultModelProtocol {
+class SearchViewController: UIViewController{
    
     var feedItem: NSArray = NSArray()
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-        let searchResult = searchResultTableViewCell()
-        let item: ContentDBModel = feedItem[0] as! ContentDBModel
-        
-        
-        searchResult.lbGenre.text! = item.cgenre!
-        searchResult.lbView.text! = item.cview!
-        searchResult.lbTitle.text! = item.ctitle!
-    }
+//    func itemDownloaded(items: NSArray) {
+//        feedItem = items
+//        let searchResult = searchResultTableViewCell()
+//        let item: ContentDBModel = feedItem[0] as! ContentDBModel
+
+//        searchResult.lbGenre.text! = item.cgenre!
+//        searchResult.lbView.text! = item.cview!
+//        searchResult.lbTitle.text! = item.ctitle!
+//    }
     
    
     
@@ -34,6 +33,7 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
         super.viewDidLoad()
         
         secondAnimation()
+        
         
       
         
@@ -72,12 +72,12 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
         }, completion:nil)
     }
     @IBAction func btnSearch(_ sender: UIButton) {
-        print("검색버튼 클릭_ 검색어:\(Stsearch)")
-        Stsearch = SearchBar.text!
-        let searchModel  = SearchResultModel()
-        searchModel.delegate = self
-        searchModel.downloadItems(UserId: Stsearch)
-        print("검색버튼 클릭_ 검색어:\(Stsearch)")
+//        print("검색버튼 클릭_ 검색어:\(Stsearch)")
+//        Stsearch = SearchBar.text!
+//        let searchModel  = SearchResultModel()
+//        searchModel.delegate = self
+//        searchModel.downloadItems()
+//        print("검색버튼 클릭_ 검색어:\(Stsearch)")
 
     }
     
@@ -92,27 +92,27 @@ class SearchViewController: UIViewController, SearchResultModelProtocol {
     }
     */
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sgSearch"{
-            let detailView = segue.destination as! SearchResultTableViewController
-            let item: ContentDBModel = feedItem[0] as! ContentDBModel
-            
-            let searchResult = searchResultTableViewCell()
-            
-            searchResult.lbGenre.text! = item.cgenre!
-            searchResult.lbView.text! = item.cview!
-            searchResult.lbTitle.text! = item.ctitle!
-
-
-            //print("프리패어전_ 검색어:\(search)")
-
-            //detailView.receiveItems(sid, sname, sdept, sphone)
-
-
-        }
-            
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "sgSearch"{
+////            _ = segue.destination as! SearchResultTableViewController
+////            let item: ContentDBModel = feedItem[0] as! ContentDBModel
+////
+////            let searchResult = searchResultTableViewCell()
+////
+////            searchResult.lbGenre.text! = item.cgenre!
+////            searchResult.lbView.text! = item.cview!
+////            searchResult.lbTitle.text! = item.ctitle!
+//
+//
+//            //print("프리패어전_ 검색어:\(search)")
+//
+//            //detailView.receiveItems(sid, sname, sdept, sphone)
+//
+//
+//        }
+//
+//
+//    }
     
     
 }
