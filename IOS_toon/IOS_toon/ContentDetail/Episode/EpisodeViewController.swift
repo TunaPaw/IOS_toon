@@ -9,54 +9,25 @@ import UIKit
 import WebKit
 
 
-class EpisodeViewController: UIViewController, EpisodeViewModelProtocol {
+class EpisodeViewController: UIViewController {
     
-
-    var receiveepicon: String = ""
+    var receiveEpicon: String = ""
 
     @IBOutlet weak var wbEpi: WKWebView!
   
-    var feedItem: String = String()
+    var feedItem: String = ""
       
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let episodeViewModel = EpisodeViewModel()
-        episodeViewModel.delegate = self
-        episodeViewModel.downloadItems()
+        wbEpi.load(URLRequest(url: URL(string: receiveEpicon)!))
         
-
-        
-//        print("뷰url\(feedItem)")
-      //  wbEpi?.load(URLRequest(url: URL(string: "\(feedItem)")!))
-        wbEpi.load(URLRequest(url: URL(string: "http://batoon3.net/bbs/board.php?bo_table=toons&table=toons&wr_id=174036&is=8147&cid=")!))
-        
-  
+    }
     
-    }
-    func itemDownloaded(items: String) {
-        feedItem = items
-        print("aaaaaaa\(feedItem)")
-        
-    }
     
     func receiveItem(_ epicon: String){
-      //  receiveepicon = epicon
+        receiveEpicon = epicon
     }
     
-
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -21,7 +21,7 @@ class FavoriteTableViewController: UITableViewController, FavoriteTableModelProt
             favoriteTableModel.delegate = self
             favoriteTableModel.downloadItems()
             
-            FavoriteTableView.rowHeight =  200
+            FavoriteTableView.rowHeight =  220
             
         }
         func itemDownloaded(items: NSArray) {

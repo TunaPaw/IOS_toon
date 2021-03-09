@@ -18,12 +18,11 @@ class EpisodeViewModel{
     var ecode: String = Share.nowEcode
     
     var delegate: EpisodeViewModelProtocol!
-    var urlPath = "http://127.0.0.1:8080/iosproject/episodeViewRead.jsp?ccode=\(Share.nowContentCode)&ecode=\(Share.nowEcode)"
+    var urlPath = "http://127.0.0.1:8080/iosproject/episodeViewRead.jsp?ccode=\(Share.nowContentCode)&ecode=\(1)"
     
     func downloadItems(){
         
         print("다운로드\(Share.nowContentCode),\(Share.nowEcode)")
-        print("다운로드\(urlPath)")
         
         let url = URL(string: urlPath)!
         

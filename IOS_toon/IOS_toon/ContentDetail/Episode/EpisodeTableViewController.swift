@@ -17,7 +17,6 @@ class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtoc
     var feedItem: NSArray = NSArray()
     var receiveCcode: String = ""
     var receiveEcode: String = ""
-    var receiveTotalepi: String = ""
     var receiveEpicon: String = ""
     var receiveCover: String = ""
     
@@ -33,7 +32,6 @@ class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtoc
         
         wbCover.load(URLRequest(url: URL(string: "\(receiveCover)")!))
         
-        print(Share.nowContentCode)
     }
     func itemDownloaded(items: NSArray) {
         feedItem = items
@@ -69,12 +67,15 @@ class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtoc
         let item: EpisodeDBModel = feedItem[indexPath.row] as! EpisodeDBModel
 
         cell.lbEpi?.text = "\(item.Ecode!)화"
-        Share.nowEcode = ""
-        Share.nowEcode = "\(indexPath.row)"
+        
         receiveEcode = item.Ecode!
         receiveEpicon = item.EContentImage1!
-        receiveCcode = Share.nowContentCode
+        receiveCcode = item.Ccode!
+        print(receiveEcode)
+        print(receiveEpicon)
         return cell
+      
+        
     }
     
     
@@ -87,10 +88,17 @@ class EpisodeTableViewController: UITableViewController, EpisodeTableModelProtoc
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgEpicon"{
+            let cell = sender as! UITableViewCell
+            let indexPath = self.EpisodeTableView.indexPath(for: cell)
             let detailView = segue.destination as! EpisodeViewController
-            let epicon = receiveEpicon
-
-            detailView.receiveItem(epicon)
+            
+            let item: EpisodeDBModel = feedItem[(indexPath!.row)] as! EpisodeDBModel
+            
+            let epicon = item.EContentImage1
+            
+            detailView.receiveItem(epicon!)
+         //   print("몇화입니까\((EpisodeTableView.indexPathForSelectedRow))")
+           // detailView.receiveItem(epicon)
         }
     }
     /*

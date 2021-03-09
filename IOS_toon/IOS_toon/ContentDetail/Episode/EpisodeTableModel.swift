@@ -24,7 +24,6 @@ class EpisodeTableModel{
                 print("failed to download data")
             }else{
                 print("Data is downloading")
-                print("\(urlPath)")
                 self.parseJONS(data!)
             }
         }

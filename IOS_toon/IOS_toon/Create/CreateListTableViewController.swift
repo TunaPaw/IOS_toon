@@ -1,41 +1,36 @@
 //
-//  RecentTableViewController.swift
+//  CreateListTableViewController.swift
 //  IOS_toon
 //
-//  Created by Tuna on 2021/02/24.
+//  Created by Tuna on 2021/03/10.
 //
 
 import UIKit
 
-class RecentTableViewController: UITableViewController, RecentTableModelProtocol {
+class CreateListTableViewController: UITableViewController, CreateListModelProtocol {
+    @IBOutlet var CreateList: UITableView!
+    func itemDownloaded(items: NSArray) {
+        feedItems = items
+        self.CreateList.reloadData()
+        
+        
+    }
     
-   
-    @IBOutlet var RecentTableView: UITableView!
+    var feedItems: NSArray = NSArray()
+    var imgUrl: String = ""
     
-    var feedItem: NSArray = NSArray()
-    var imageurl: String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let recentTableModel = RecentTableModel()
-        recentTableModel.delegate = self
-        recentTableModel.downloadItems()
+       let createTableModel = CreateListModel()
+        createTableModel.delegate = self
+        createTableModel.downloadItems()
         
-        RecentTableView.rowHeight = 220
+        CreateList.rowHeight = 200
         
     }
-    
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-        self.RecentTableView.reloadData()
-    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        let queryModel = RecentTableModel()
-//        queryModel.delegate = self
-//        queryModel.downloadItems()
-//    }
 
     // MARK: - Table view data source
 
@@ -46,26 +41,26 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return feedItem.count
+        return feedItems.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! RecentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "createCell", for: indexPath)as! CreateListTableViewCell
 
         // Configure the cell...
-        let item: ContentDBModel = feedItem[indexPath.row] as! ContentDBModel
+        let item: ContentDBModel = feedItems[indexPath.row] as! ContentDBModel
     
         
-        cell.RwbImage?.load(URLRequest(url: URL(string: "\(item.ccover!)")!))
-        cell.RlbView?.text = "조회 : \(item.cview!)"
-        cell.RlbGenre?.text = "장르 : \(item.cgenre!)"
-        cell.RlbTitle?.text = "제목 : \(item.ctitle!)"
-      
+        cell.wb?.load(URLRequest(url: URL(string: "\(item.ccover!)")!))
+        cell.lbView?.text = "조회 : \(item.cview!)"
+        cell.lbGenre?.text = "장르 : \(item.cgenre!)"
+        cell.lbTitle?.text = "제목 : \(item.ctitle!)"
+
         return cell
     }
     
-    //스와이프
+    //스와이프-----------
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let favoriteAction = UIContextualAction(style: .normal, title:  "즐겨찾기", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
@@ -80,7 +75,7 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
             success(true)
         })
         shareAction.backgroundColor = UIColor.systemBlue
-        let cartAction = UIContextualAction(style: .normal, title:  "장바구니", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        let cartAction = UIContextualAction(style: .normal, title:  "백업", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             // Call edit action
             // Reset state
             success(true)
@@ -91,24 +86,29 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
 
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let oneAction = UIContextualAction(style: .normal, title:  "one", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        let oneAction = UIContextualAction(style: .normal, title:  "수정", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             // Call edit action
             // Reset state
             success(true)
         })
-        oneAction.backgroundColor = UIColor.systemOrange
-        let twoAction = UIContextualAction(style: .normal, title:  "two", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            // Call edit action
-            // Reset state
+        oneAction.backgroundColor = UIColor.systemTeal
+        let twoAction = UIContextualAction(style: .normal, title:  "삭제", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+           //??????어디다가 넣어야됨?? _ = UIAlertController(title: "경고", message: "백업하셨나요? 작성하신 창작물이 삭제됩니다!", preferredStyle: UIAlertController.Style.alert)
             success(true)
+            
         })
         twoAction.backgroundColor = UIColor.systemPurple
 
             return UISwipeActionsConfiguration(actions:[twoAction,oneAction])
 
-
-
         }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+//            CreateList.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [IndexPath], with: .bottom)
+            }
+        }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -157,10 +157,10 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgDetail"{
             let cell = sender as! UITableViewCell
-            let indexPath = self.RecentTableView.indexPath(for: cell)
+            let indexPath = self.CreateList.indexPath(for: cell)
             let detailView = segue.destination as! ContentDetailViewController
             
-            let item: ContentDBModel = feedItem[(indexPath!.row)] as! ContentDBModel
+            let item: ContentDBModel = feedItems[(indexPath!.row)] as! ContentDBModel
             
             let code = item.ccode!
             let cover = item.ccover!
@@ -176,5 +176,4 @@ class RecentTableViewController: UITableViewController, RecentTableModelProtocol
             detailView.receiveItems(code, cover, title, genre, view, insert,  delete, author, subtitle, episode)
         }
     }
-
 }

@@ -13,7 +13,7 @@ protocol FavoriteTableModelProtocol: class {
     
     class FavoriteTableModel: NSObject {
         var delegate: FavoriteTableModelProtocol!
-        let urlPath = "http://127.0.0.1:8080/iosproject/favoriteRead.jsp"
+        let urlPath = "http://127.0.0.1:8080/iosproject/indepenRead.jsp"
         
         func downloadItems(){
             let url = URL(string: urlPath)!
