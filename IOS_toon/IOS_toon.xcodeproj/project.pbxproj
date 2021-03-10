@@ -178,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				A5D4BF3125F7DE1300150616 /* Create */,
-				A5D4BF2C25F7D7C500150616 /* Independent */,
 				A5E79CF325DEA83800909E77 /* Image */,
 				A54063B425F103B8007353E7 /* My */,
 				A54063B725F1041D007353E7 /* Search */,
@@ -342,13 +341,6 @@
 				6F472DC625F2498F0069DAD1 /* SearchViewController.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		A5D4BF2C25F7D7C500150616 /* Independent */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Independent;
 			sourceTree = "<group>";
 		};
 		A5D4BF3125F7DE1300150616 /* Create */ = {
