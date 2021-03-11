@@ -24,7 +24,6 @@ class MainViewController: UIViewController{
     // MARK: - Outlets
     
     
-    @IBOutlet weak var NewCollection: UICollectionView!
     @IBOutlet weak var PopCollection: UICollectionView!
     
     @IBOutlet weak var adPage: UIPageControl!
@@ -36,7 +35,7 @@ class MainViewController: UIViewController{
     var count = 0
     
     var numImage = 0
-    var imagName = ["ad8.png", "ad1.png", "ad4.png", "ad5.png", "ad2.png", "ad6.png","ad7.png"]
+    var imagName = ["ad1.png", "ad11.png","ad12.png","ad4.png", "ad5.png", "ad2.png", "ad8.png"]
     
     
     let numberofTouches = 2

@@ -103,7 +103,7 @@ class ContentDetailViewController: UIViewController {
         receiveinsert = insert
         receivedelete = delete
         receiveAuthor = author
-        receivedelete = subtitle
+        receivesubtitle = subtitle
         receiveepisode = episode
     }
 
