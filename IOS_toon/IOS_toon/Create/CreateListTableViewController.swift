@@ -9,6 +9,8 @@ import UIKit
 
 class CreateListTableViewController: UITableViewController, CreateListModelProtocol {
     @IBOutlet var CreateList: UITableView!
+    
+    
     func itemDownloaded(items: NSArray) {
         feedItems = items
         self.CreateList.reloadData()
