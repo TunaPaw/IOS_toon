@@ -29,6 +29,9 @@
 		6FBE46CF25DE597900971EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE46CD25DE597900971EFC /* Main.storyboard */; };
 		6FBE46D125DE597B00971EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE46D025DE597B00971EFC /* Assets.xcassets */; };
 		6FBE46D425DE597B00971EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBE46D225DE597B00971EFC /* LaunchScreen.storyboard */; };
+		6FFBD236260B011B002C4825 /* myFavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFBD235260B011B002C4825 /* myFavoriteTableViewController.swift */; };
+		6FFBD239260B0212002C4825 /* myFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFBD238260B0212002C4825 /* myFavoriteTableViewCell.swift */; };
+		6FFBD23C260B032E002C4825 /* myFavoriteTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFBD23B260B032E002C4825 /* myFavoriteTableModel.swift */; };
 		A50461E025E7A2DA00ED1D0F /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50461DF25E7A2DA00ED1D0F /* ContentDetailViewController.swift */; };
 		A50940B325E597A7000D3A84 /* FavoriteTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940B225E597A7000D3A84 /* FavoriteTableModel.swift */; };
 		A50940B725E627AA000D3A84 /* ContentDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50940B625E627AA000D3A84 /* ContentDBModel.swift */; };
@@ -93,6 +96,9 @@
 		6FBE46D025DE597B00971EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FBE46D325DE597B00971EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FBE46D525DE597B00971EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FFBD235260B011B002C4825 /* myFavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFavoriteTableViewController.swift; sourceTree = "<group>"; };
+		6FFBD238260B0212002C4825 /* myFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		6FFBD23B260B032E002C4825 /* myFavoriteTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFavoriteTableModel.swift; sourceTree = "<group>"; };
 		A50461DF25E7A2DA00ED1D0F /* ContentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
 		A50940B225E597A7000D3A84 /* FavoriteTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableModel.swift; sourceTree = "<group>"; };
 		A50940B625E627AA000D3A84 /* ContentDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDBModel.swift; sourceTree = "<group>"; };
@@ -315,6 +321,9 @@
 			children = (
 				A5E79D1725DED32A00909E77 /* MyPageViewController.swift */,
 				6F472D8625EF70280069DAD1 /* myPageModel.swift */,
+				6FFBD235260B011B002C4825 /* myFavoriteTableViewController.swift */,
+				6FFBD238260B0212002C4825 /* myFavoriteTableViewCell.swift */,
+				6FFBD23B260B032E002C4825 /* myFavoriteTableModel.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -493,6 +502,7 @@
 				6F472D8725EF70280069DAD1 /* myPageModel.swift in Sources */,
 				A50940B325E597A7000D3A84 /* FavoriteTableModel.swift in Sources */,
 				A58CAA4425F20D19007893A3 /* BookTableViewController.swift in Sources */,
+				6FFBD236260B011B002C4825 /* myFavoriteTableViewController.swift in Sources */,
 				A50461E025E7A2DA00ED1D0F /* ContentDetailViewController.swift in Sources */,
 				A5D4BF3C25F7EB1600150616 /* CreateListTableViewController.swift in Sources */,
 				A5633EB525EA2DAC008FA514 /* ReviewTableViewController.swift in Sources */,
@@ -500,6 +510,7 @@
 				A5D4BF3F25F7EC0600150616 /* CreateListTableViewCell.swift in Sources */,
 				A5D1F15225E96F5500751EB0 /* EpisodeViewController.swift in Sources */,
 				A5633EBC25EA301E008FA514 /* ReviewTableModel.swift in Sources */,
+				6FFBD239260B0212002C4825 /* myFavoriteTableViewCell.swift in Sources */,
 				A58CAA4525F20D19007893A3 /* BookTableViewCell.swift in Sources */,
 				6F472DCA25F249900069DAD1 /* SearchViewController.swift in Sources */,
 				A5E79D1825DED32A00909E77 /* MyPageViewController.swift in Sources */,
@@ -532,6 +543,7 @@
 				6FA415FF25E363310018B1A4 /* InsertModel.swift in Sources */,
 				6F472D8325EF5C880069DAD1 /* LoginModel.swift in Sources */,
 				A5633EB825EA2DD1008FA514 /* ReviewTableViewCell.swift in Sources */,
+				6FFBD23C260B032E002C4825 /* myFavoriteTableModel.swift in Sources */,
 				6F472DCC25F249900069DAD1 /* SearchResultModel.swift in Sources */,
 				6F3C5CD425DE6F3000692EF1 /* FindViewController.swift in Sources */,
 				A5D4BF2E25F7D7E700150616 /* CreateViewController.swift in Sources */,
